@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { djomusic, mainLogo } from "../utils/constants";
-import joegif from "../assets/joekerry.gif";
+// import joegif from "../assets/joekerry.gif";
 import Navbar from "./Navbar";
 
 function Banner() {
@@ -28,11 +28,11 @@ function Banner() {
       <motion.div className="absolute inset-0 z-0" style={{ y }}>
         <div className="relative w-full h-full">
           {/* Main GIF Background */}
-          <img
+          {/* <img
             src={joegif}
             className="w-full h-full object-cover"
             alt="DJO Performance"
-          />
+          /> */}
 
           {/* Dynamic Overlay with Mouse Interaction */}
           <motion.div
