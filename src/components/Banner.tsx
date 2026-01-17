@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { djomusic, mainLogo } from "../utils/constants";
+import { mainLogo } from "../utils/constants";
 // import joegif from "../assets/joekerry.gif";
 import Navbar from "./Navbar";
 

@@ -8,7 +8,7 @@ import cdBanner from "../assets/crux-banner.png";
 function BannerTwo() {
   // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 500], [0, 150]);
+  // const y = useTransform(scrollY, [0, 500], [0, 150]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   // useEffect(() => {
