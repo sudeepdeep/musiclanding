@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Music, ExternalLink, Share2, Copy, Check } from "lucide-react";
+import { Music, ExternalLink, Copy, Check } from "lucide-react";
 import { useParams } from "react-router-dom";
 
 const SONGS_DATABASE: any = {

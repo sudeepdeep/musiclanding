@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { mainLogo } from "../utils/constants";
 import Navbar from "./Navbar";
@@ -6,22 +6,22 @@ import vintageCd from "../assets/vintage-cd.png";
 import cdBanner from "../assets/crux-banner.png";
 
 function BannerTwo() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, 150]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth) * 100,
-        y: (e.clientY / window.innerHeight) * 100,
-      });
-    };
+  // useEffect(() => {
+  //   const handleMouseMove = (e: MouseEvent) => {
+  //     setMousePosition({
+  //       x: (e.clientX / window.innerWidth) * 100,
+  //       y: (e.clientY / window.innerHeight) * 100,
+  //     });
+  //   };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  //   window.addEventListener("mousemove", handleMouseMove);
+  //   return () => window.removeEventListener("mousemove", handleMouseMove);
+  // }, []);
 
   function handleClickonCD() {
     window.location.href = "/music/end-of-beginning";
@@ -203,8 +203,8 @@ function BannerTwo() {
                       i === 0
                         ? "rgba(34, 197, 94, 0.6)"
                         : i === 1
-                        ? "rgba(59, 130, 246, 0.6)"
-                        : "rgba(168, 85, 247, 0.6)",
+                          ? "rgba(59, 130, 246, 0.6)"
+                          : "rgba(168, 85, 247, 0.6)",
                     transform: `scale(${1 - i * 0.2})`,
                   }}
                   animate={{
