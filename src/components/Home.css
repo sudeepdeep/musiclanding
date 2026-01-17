@@ -1,0 +1,146 @@
+.nav-link {
+  position: relative;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding-bottom: 6px;
+}
+
+/* underline */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #1db954; /* Spotify green */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+/* hover effect */
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-link:hover {
+  color: #1db954;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  transform-origin: center;
+}
+
+.home-wrapper {
+  position: relative;
+  background: #000;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Dedicated noise layer */
+.noise-overlay {
+  position: fixed; /* 🔥 key */
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999; /* above everything */
+
+  background-image: repeating-radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+
+  background-size: 3px 3px;
+  opacity: 0.15;
+
+  animation: noiseMove 0.5s steps(2) infinite;
+}
+
+@keyframes noiseMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-1px, 1px);
+  }
+  50% {
+    transform: translate(1px, -1px);
+  }
+  75% {
+    transform: translate(-1px, -1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+
+  /* Layered noise */
+  background-image: repeating-radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.12) 0.5px,
+      transparent 0.5px,
+      transparent 1.5px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+
+  background-size: 2px 2px, 6px 6px;
+
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+
+  animation: noiseMove 0.35s steps(2) infinite;
+}
+
+@keyframes noiseMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-1px, 1px);
+  }
+  40% {
+    transform: translate(1px, -1px);
+  }
+  60% {
+    transform: translate(-1px, -1px);
+  }
+  80% {
+    transform: translate(1px, 1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.home-wrapper {
+  background: #0b0b0b; /* subtle lift */
+}
+
+.noise-overlay {
+  filter: contrast(140%) brightness(120%);
+
+  opacity: 0.12;
+  background-size: 3px 3px, 8px 8px;
+  animation: 0.6s steps(2);
+}

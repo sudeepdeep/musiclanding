@@ -3,6 +3,7 @@ import "./App.css";
 import AppLayout from "./layout/AppLayout";
 import Home from "./pages/Home";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import MusicPage from "./components/MusicPage";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -17,13 +18,17 @@ function App() {
       ],
     },
     {
+      path: "music/:slug",
+      element: <MusicPage />,
+    },
+    {
       path: "privacy-policy",
       element: <PrivacyPolicy />,
     },
   ]);
 
   return (
-    <div className="font-poppins">
+    <div className="font-orbitron">
       <RouterProvider router={appRouter} />
     </div>
   );

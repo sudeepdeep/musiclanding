@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         poppins: ["Poppins"],
         lemon: ["lemon"],
+        orbitron: ["Orbitron, sans-serif"],
       },
     },
   },
