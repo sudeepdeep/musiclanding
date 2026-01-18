@@ -14,7 +14,7 @@
   bottom: 0;
   height: 2px;
   width: 100%;
-  background-color: #1db954; /* Spotify green */
+  background-color: rgba(59, 130, 246); /* Spotify green */
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
@@ -26,7 +26,7 @@
 }
 
 .nav-link:hover {
-  color: #1db954;
+  color: rgba(59, 130, 246);
   transition: color 0.3s ease;
 }
 
@@ -89,7 +89,8 @@
   z-index: 9999;
 
   /* Layered noise */
-  background-image: repeating-radial-gradient(
+  background-image:
+    repeating-radial-gradient(
       circle,
       rgba(255, 255, 255, 0.12),
       rgba(255, 255, 255, 0.12) 0.5px,
@@ -104,7 +105,9 @@
       transparent 3px
     );
 
-  background-size: 2px 2px, 6px 6px;
+  background-size:
+    2px 2px,
+    6px 6px;
 
   opacity: 0.18;
   mix-blend-mode: overlay;
@@ -141,6 +144,8 @@
   filter: contrast(140%) brightness(120%);
 
   opacity: 0.12;
-  background-size: 3px 3px, 8px 8px;
+  background-size:
+    3px 3px,
+    8px 8px;
   animation: 0.6s steps(2);
 }

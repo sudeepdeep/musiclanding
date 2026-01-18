@@ -32,6 +32,22 @@ function BannerTwo() {
       {/* Dynamic Background with Animated Shapes */}
       <div className="absolute inset-0">
         <motion.div
+          className="absolute top-1/4 left-1/4 w-[900px] h-[900px] rounded-full"
+          style={{
+            background: `radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%)`,
+          }}
+          animate={{
+            scale: [1, 1.5, 1],
+            x: [0, 100, 0],
+            y: [0, -50, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        {/* <motion.div
           className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full"
           style={{
             background: `radial-gradient(circle, rgba(34, 197, 94, 0.3) 0%, transparent 70%)`,
@@ -79,7 +95,7 @@ function BannerTwo() {
             repeat: Infinity,
             ease: "linear",
           }}
-        />
+        /> */}
 
         {/* <motion.div
           className="absolute inset-0"
@@ -176,6 +192,7 @@ function BannerTwo() {
                 Listen Now
               </motion.button>
               <motion.button
+                onClick={() => (window.location.href = "#tour")}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 border-2 border-white text-white font-semibold text-lg transition-all duration-300 hover:bg-white hover:text-black backdrop-blur-sm"
               >
