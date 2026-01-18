@@ -1,11 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AppleMusicEmbed, DJOSpotify, YouTubeChannelEmbed } from "./MusicPage";
-import {
-  AppleMusicIcon,
-  SpotifyIcon,
-  YoutubeIcon,
-  YoutubeMusicIcon,
-} from "../assets/Icons";
+import { AppleMusicIcon, SpotifyIcon, YoutubeIcon } from "../assets/Icons";
 import { motion, useMotionValue, animate } from "framer-motion";
 
 function YouTubeSection() {

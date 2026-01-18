@@ -298,7 +298,6 @@ export function SpotifyEmbed({ song }: any) {
 
 export function YouTubeChannelEmbed({ type = "playlist", id }: any) {
   // type can be: "playlist", "album", or "track"
-  const endpoint = type === "track" ? "track" : "playlist";
 
   return (
     <iframe
