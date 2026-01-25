@@ -1,5 +1,5 @@
 // import React, { useEffect, useState } from "react";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { CalendarIcon, Music } from "lucide-react";
 import { SpotifyIcon } from "../assets/Icons";
 import { mainLogo } from "../utils/constants";
