@@ -15,13 +15,13 @@ import {
 import { spotifyMapping } from "../utils/constants";
 
 const SONGS_DATABASE: any = {
-  "end-of-beginning": {
-    title: "End of Beginning",
+  "the-crux": {
+    title: "The Crux",
     artist: "DJO",
-    album: "Song",
+    album: "Album",
     releaseYear: "2025",
     coverArt:
-      "https://i.scdn.co/image/ab67616d00001e02a277a7311694d4b7dfe37f06",
+      "https://i.scdn.co/image/ab67616d0000b273f4277fb50a1306e63cef99b4",
     platforms: {
       spotify: "https://open.spotify.com/track/example",
       appleMusic: "https://music.apple.com/album/example",
@@ -77,7 +77,7 @@ const PLATFORM_INFO_ICONS: any = {
   },
 };
 
-export default function MusicPage() {
+export default function AlbumPage() {
   const { slug } = useParams();
   //   const [currentSlug, setCurrentSlug] = useState("IzItACrime");
   const [song, setSong] = useState<any>(null);
@@ -172,7 +172,9 @@ export default function MusicPage() {
             {/* Album Cover */}
             <div className="relative">
               <div className="w-[400px] h-[380px] flex justify-center items-center">
-                <SpotifyEmbed song={slug} />
+                <SpotifyEmbedAlbum
+                  spotifyAlbumId={spotifyMapping[slug ?? ""]}
+                />
               </div>
             </div>
 
@@ -213,7 +215,7 @@ export default function MusicPage() {
                 ) : (
                   <>
                     <Copy className="w-5 h-5" />
-                    Share Song
+                    Share Album
                   </>
                 )}
               </button>
@@ -281,11 +283,11 @@ export default function MusicPage() {
   );
 }
 
-export function SpotifyEmbed({ song }: any) {
+export function SpotifyEmbedAlbum({ spotifyAlbumId }: any) {
   return (
     <iframe
       title="djo-music"
-      src={`https://open.spotify.com/embed/track/${spotifyMapping[song]}`}
+      src={`https://open.spotify.com/embed/album/${spotifyAlbumId}?utm_source=generator&theme=0`}
       width="100%"
       height="100%"
       frameBorder="0"
@@ -312,7 +314,7 @@ export function YouTubeChannelEmbed({ type = "playlist", id }: any) {
   );
 }
 
-export function AppleMusicEmbed({ link, height, width }: any) {
+export function AppleMusicEmbed({ link }: any) {
   // Convert regular Apple Music link to embed link
   const embedUrl = link.replace("music.apple.com", "embed.music.apple.com");
 
@@ -321,15 +323,15 @@ export function AppleMusicEmbed({ link, height, width }: any) {
       title="apple iframe"
       allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
       frameBorder="0"
-      width={width ?? "300"}
-      height={height ?? "452"}
+      width="300"
+      height="452"
       sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
       src={embedUrl}
     />
   );
 }
 
-export function DJOSpotify({ artist, height, width }: any) {
+export function DJOSpotify({ artist }: any) {
   switch (artist) {
     case "djo":
     default:
@@ -337,8 +339,8 @@ export function DJOSpotify({ artist, height, width }: any) {
         <iframe
           title="djo-music"
           src="https://open.spotify.com/embed/artist/5p9HO3XC5P3BLxJs5Mtrhm"
-          width={width ?? "300"}
-          height={height ?? "452"}
+          width="300"
+          height="452"
           frameBorder="0"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"

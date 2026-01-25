@@ -4,6 +4,7 @@ import AppLayout from "./layout/AppLayout";
 import Home from "./pages/Home";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import MusicPage from "./components/MusicPage";
+import AlbumPage from "./components/AlbumPage";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -20,6 +21,11 @@ function App() {
     {
       path: "music/:slug",
       element: <MusicPage />,
+    },
+
+    {
+      path: "album/:slug",
+      element: <AlbumPage />,
     },
     {
       path: "privacy-policy",

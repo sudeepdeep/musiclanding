@@ -22,10 +22,21 @@ function Merchandise() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-6xl md:text-8xl font-black text-white mb-6">
-            OFFICIAL STORE
+            OFFICIAL{" "}
+            <span
+              className="text-transparent"
+              style={
+                {
+                  WebkitTextStroke: "3px white",
+                } as React.CSSProperties
+              }
+            >
+              {" "}
+              STORE
+            </span>
           </h2>
 
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
             Get exclusive DJO merchandise, from limited edition vinyl to tour
             apparel
           </p>

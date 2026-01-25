@@ -107,7 +107,7 @@ function Footer() {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto mb-[50px]">
         {/* Footer Header */}
         <div className="text-center mb-16">
           <img src={mainLogo} alt="DJO" className="w-32 h-auto mx-auto mb-6" />

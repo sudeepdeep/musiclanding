@@ -30,11 +30,21 @@ function Tour() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-6xl md:text-8xl font-black text-white mb-6">
-            WORLD TOUR
+            WORLD{" "}
+            <span
+              className="text-transparent"
+              style={
+                {
+                  WebkitTextStroke: "3px white",
+                } as React.CSSProperties
+              }
+            >
+              TOUR
+            </span>
           </h2>
 
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Join DJO on the Back On You World Tour 2025
+          <p className="text-xl md:text-2xl text-gray-400  max-w-3xl mx-auto leading-relaxed">
+            Join DJO on the Back On You World Tour 2026
           </p>
         </div>
 
@@ -57,7 +67,7 @@ function Tour() {
                 </div>
 
                 {/* Venue Info */}
-                <div className="md:col-span-2">
+                <div className="md:col-span-2 text-center md:text-left">
                   <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
                     {tour.venue}
                   </h3>

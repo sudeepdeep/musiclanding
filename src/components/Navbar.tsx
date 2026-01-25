@@ -38,7 +38,27 @@ function Navbar() {
         }`}
       >
         {/* Left spacer */}
-        <div className="flex-1"></div>
+        {/* <div className="flex-1"></div> */}
+
+        <div className="hidden flex-1 md:flex justify-start">
+          <div className="flex gap-3">
+            <a
+              href="https://instagram.com/djomusic"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-white/60 hover:text-white transition-colors duration-300"
+              aria-label="Instagram"
+            >
+              <img
+                className="w-12"
+                src={
+                  "https://store.djomusic.com/cdn/shop/files/CruxDeluxe_LOGO_410x.png?v=1757606871"
+                }
+                alt="djo-music"
+              />
+            </a>
+          </div>
+        </div>
 
         {/* Center navigation links */}
         <div className="flex gap-[50px] text-[15px]">

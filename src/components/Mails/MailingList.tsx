@@ -33,7 +33,7 @@ function MailingList() {
 
       <div className="absolute inset-0">
         <div
-          className="absolute top-1/4 right-1/3 w-96 h-96 rounded-full opacity-30"
+          className="absolute top-1/4 right-1/3 w-96 h-96 rounded-full opacity-40"
           style={{
             background: `radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%)`,
           }}
@@ -42,13 +42,22 @@ function MailingList() {
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         {/* Section Header */}
-        <h2 className="text-5xl md:text-8xl font-black text-white mb-6">
+        <h2 className="text-4xl md:text-8xl font-black text-white mb-6">
           STAY
           <br />
-          <span className="text-gray-400">CONNECTED</span>
+          <span
+            className="text-transparent"
+            style={
+              {
+                WebkitTextStroke: "3px white",
+              } as React.CSSProperties
+            }
+          >
+            CONNECTED
+          </span>
         </h2>
 
-        <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-16">
+        <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-16">
           Be the first to know about new releases, exclusive content, and tour
           announcements
         </p>

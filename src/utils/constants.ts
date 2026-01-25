@@ -206,4 +206,5 @@ export const toursConstantReponse: any = `
 
 export const spotifyMapping: any = {
   "end-of-beginning": "3qhlB30KknSejmIvZZLjOD",
+  "the-crux": "1xQGeKOIMZrPBUlDJuqZGQ",
 };
