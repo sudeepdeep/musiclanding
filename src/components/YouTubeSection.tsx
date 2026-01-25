@@ -1,15 +1,13 @@
 /* eslint-disable no-lone-blocks */
+import {
+  animate,
+  AnimatePresence,
+  motion,
+  useMotionValue
+} from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import { AppleMusicEmbed, DJOSpotify, YouTubeChannelEmbed } from "./MusicPage";
 import { AppleMusicIcon, SpotifyIcon, YoutubeIcon } from "../assets/Icons";
 import JoeGif from "../assets/joekerry.gif";
-import {
-  motion,
-  useMotionValue,
-  animate,
-  LayoutGroup,
-  AnimatePresence,
-} from "framer-motion";
 
 function Gallery({ items, setIndex }: any) {
   return (

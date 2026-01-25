@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 export default function SpotifyFixedPlayer() {
   const [isExpanded, setIsExpanded] = useState(false);

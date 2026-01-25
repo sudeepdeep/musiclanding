@@ -1,11 +1,9 @@
 // import React, { useEffect, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
+import { CalendarIcon, Music } from "lucide-react";
+import { SpotifyIcon } from "../assets/Icons";
 import { mainLogo } from "../utils/constants";
 import Navbar from "./Navbar";
-import vintageCd from "../assets/vintage-cd.png";
-import cdBanner from "../assets/crux-banner.png";
-import { MusicIcon, SpotifyIcon } from "../assets/Icons";
-import { Calendar1Icon, CalendarIcon, Music } from "lucide-react";
 
 function BannerOne() {
   // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
