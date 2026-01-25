@@ -7,7 +7,6 @@ import Navbar from "./Navbar";
 
 function BannerOne() {
   // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const { scrollY } = useScroll();
   // const y = useTransform(scrollY, [0, 500], [0, 150]);
   // const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 

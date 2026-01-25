@@ -1,8 +1,5 @@
-import { useState } from "react";
 
 export default function SpotifyFixedPlayer() {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [isMinimized, setIsMinimized] = useState(false);
 
   // Replace this with your actual Spotify track URI
   // Format: spotify:track:TRACK_ID
@@ -12,20 +9,6 @@ export default function SpotifyFixedPlayer() {
   // Or use album/playlist
   const spotifyAlbumId = "1xQGeKOIMZrPBUlDJuqZGQ"; // Example album
 
-  const toggleExpand = () => {
-    setIsExpanded(!isExpanded);
-    if (isMinimized) setIsMinimized(false);
-  };
-
-  const toggleMinimize = () => {
-    setIsMinimized(!isMinimized);
-    if (isExpanded) setIsExpanded(false);
-  };
-
-  const closePlayer = () => {
-    setIsExpanded(false);
-    setIsMinimized(true);
-  };
 
   return (
     <>
