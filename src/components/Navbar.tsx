@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { AnimatePresence, motion } from 'framer-motion';
+import { MenuIcon, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import "./Home.css";
 
 function Navbar() {
   const [scrollDirection, setScrollDirection] = useState("up");
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [showHam, setShowHam] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +27,10 @@ function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollY]);
+
+  function handleShowHam(){
+    setShowHam(!showHam);
+  }
   return (
     <>
       <div
@@ -40,7 +47,7 @@ function Navbar() {
         {/* Left spacer */}
         {/* <div className="flex-1"></div> */}
 
-        <div className="hidden flex-1 md:flex justify-start">
+        <div className="flex flex-1  md:justify-start justify-center">
           <div className="flex gap-3">
             <a
               href="https://instagram.com/djomusic"
@@ -61,17 +68,106 @@ function Navbar() {
         </div>
 
         {/* Center navigation links */}
-        <div className="flex gap-[50px] text-[15px]">
+        <div className="hidden md:flex gap-[50px] text-[15px]">
+           <a href="#news" className="nav-link">
+            NEWS
+          </a>
           <a href="#tour" className="nav-link">
             TOUR
           </a>
           <a href="#store" className="nav-link">
             STORE
           </a>
+          <a href="#music" className="nav-link">
+            MUSIC
+          </a>
           <a href="#mail" className="nav-link">
             MAILING LIST
           </a>
         </div>
+              
+
+        {/* apply transition for X and ham */}
+        <div className="flex justify-end md:hidden">
+  <AnimatePresence mode="wait">
+    {showHam ? (
+      <motion.div
+        key="menu-icon"
+        initial={{ opacity: 0, rotate: -90 }}
+        animate={{ opacity: 1, rotate: 0 }}
+        exit={{ opacity: 0, rotate: 90 }}
+        transition={{ duration: 0.3 }}
+      >
+        <MenuIcon 
+          className="w-8 h-8 cursor-pointer" 
+          onClick={() => handleShowHam()} 
+        />
+      </motion.div>
+    ) : (
+      <>
+        <motion.div
+          key="close-icon"
+          initial={{ opacity: 0, rotate: -90 }}
+          animate={{ opacity: 1, rotate: 0 }}
+          exit={{ opacity: 0, rotate: 90 }}
+          transition={{ duration: 0.3 }}
+          className="absolute top-6 right-6 z-50"
+        >
+          <X 
+            className="w-8 h-8 cursor-pointer text-white" 
+            onClick={() => handleShowHam()} 
+          />
+        </motion.div>
+
+        <motion.div
+          key="menu-overlay"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="fixed top-0 left-0 w-full h-screen bg-black/50 backdrop-blur-md z-40"
+        >
+          <motion.div 
+            className="flex flex-col items-center mt-[120px] gap-10 h-full"
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.1, duration: 0.4 }}
+          >
+            <motion.img
+              src="https://store.djomusic.com/cdn/shop/files/CruxDeluxe_LOGO_410x.png?v=1757606871"
+              alt="djo-music"
+              className="w-24 mb-10"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.4 }}
+            />
+            
+            {['NEWS', 'TOUR', 'STORE', 'MUSIC', 'MAILING LIST'].map((item, index) => (
+              <motion.a
+                key={item}
+                href={`#${item.toLowerCase().replace(' ', '')}`}
+                className="nav-link text-2xl text-white hover:text-gray-300 transition-colors"
+                onClick={() => handleShowHam()}
+                initial={{ x: -50, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ 
+                  delay: 0.3 + (index * 0.1), 
+                  duration: 0.4,
+                  type: "spring",
+                  stiffness: 100
+                }}
+                whileHover={{ scale: 1.1, x: 10 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {item}
+              </motion.a>
+            ))}
+          </motion.div>
+        </motion.div>
+      </>
+    )}
+  </AnimatePresence>
+</div>
 
         {/* Right social media icons */}
         <div className="hidden flex-1 md:flex justify-end">

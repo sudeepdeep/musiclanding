@@ -136,7 +136,7 @@ function YouTubeSection() {
   return (
     <>
     <section
-      id="youtube"
+      id="music"
       className="relative bg-black py-20 px-8 md:px-16 lg:px-24 overflow-hidden"
     >
       {/* Background Gradient */}

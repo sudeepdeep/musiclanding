@@ -49,7 +49,7 @@ function Merchandise() {
               {merchandiseImages.map((item: any, index: number) => (
                 <div
                   key={index}
-                  className="group relative w-80 bg-white/5 rounded-lg border border-white/10 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-100 flex flex-col"
+                  className="group relative md:w-80 w-[280px] h-[450px] md:h-auto bg-white/5 rounded-lg border border-white/10 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-100 flex flex-col"
                 >
                   {/* Product Image */}
                   <div className="relative aspect-square overflow-hidden rounded-t-lg">

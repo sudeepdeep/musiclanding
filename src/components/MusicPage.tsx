@@ -13,6 +13,7 @@ import {
   YoutubeMusicIcon,
 } from "../assets/Icons";
 import { spotifyMapping } from "../utils/constants";
+import Footer from "./Footer";
 
 const SONGS_DATABASE: any = {
   "end-of-beginning": {
@@ -171,7 +172,7 @@ export default function MusicPage() {
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             {/* Album Cover */}
             <div className="relative">
-              <div className="w-[400px] h-[380px] flex justify-center items-center">
+              <div className="w-[380px] h-[360px] md:w-[400px] md:h-[380px] flex justify-center items-center">
                 <SpotifyEmbed song={slug} />
               </div>
             </div>
@@ -186,7 +187,34 @@ export default function MusicPage() {
                 </div>
 
                 <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-none">
-                  {song.title}
+                  {/* for last word add <span
+                                className="text-transparent"
+                                style={
+                                  {
+                                    WebkitTextStroke: "3px white",
+                                  } as React.CSSProperties
+                                }
+                              >YOU</span> these styles */}
+                  {song.title.split(" ").map((word: string, index: number) => {
+                    const isLastWord = index === song.title.split(" ").length - 1;
+                    
+                    return (
+                      <span key={index} className="uppercase">
+                        {isLastWord ? (
+                          <span
+                            className="text-transparent"
+                            style={{
+                              WebkitTextStroke: "3px white",
+                            } as React.CSSProperties}
+                          >
+                            {word}
+                          </span>
+                        ) : (
+                          `${word} `
+                        )}
+                      </span>
+                    );
+                  })}
                 </h1>
 
                 <p className="text-2xl md:text-3xl text-white/70 font-light tracking-wide">
@@ -275,8 +303,11 @@ export default function MusicPage() {
               Share this link to spread the music
             </p>
           </div>
+
+
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

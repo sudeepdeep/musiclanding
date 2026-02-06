@@ -1,5 +1,3 @@
-import React from "react";
-import { mainLogo } from "../utils/constants";
 
 function Footer() {
   const socialLinks = [
@@ -96,7 +94,7 @@ function Footer() {
   ];
 
   return (
-    <footer className="relative bg-black py-20 px-8 md:px-16 lg:px-24 overflow-hidden">
+    <footer className="relative py-20 px-8 md:px-16 lg:px-24 overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0">
         <div
@@ -110,7 +108,7 @@ function Footer() {
       <div className="relative z-10 max-w-7xl mx-auto mb-[50px]">
         {/* Footer Header */}
         <div className="text-center mb-16">
-          <img src={mainLogo} alt="DJO" className="w-32 h-auto mx-auto mb-6" />
+          <img src={"https://store.djomusic.com/cdn/shop/files/CruxDeluxe_LOGO_410x.png?v=1757606871"} alt="DJO" className="w-32 h-auto mx-auto mb-6" />
           <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
             Thank you for being part of the DJO journey. Stay connected for the
             latest music, tours, and exclusive content.

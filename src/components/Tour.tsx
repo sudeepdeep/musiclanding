@@ -81,7 +81,7 @@ function Tour() {
 
                 <div className="text-center md:text-right">
                   <a
-                    href={tour.ticketLink}
+                    href={tour.ticketUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     // className="inline-block px-6 py-3 bg-white text-black font-bold hover:bg-gray-200 transition-colors duration-300"
@@ -101,8 +101,8 @@ function Tour() {
 
         {/* View All Tours Button */}
         <div className="text-center mt-12">
-          <button className="px-12 py-4 border-2 border-white text-white font-bold hover:bg-white hover:text-black transition-all duration-300">
-            View All Tour Dates
+          <button onClick={() => window.open("https://go.seated.com/notifications/welcome/691420a1-0870-40b4-b992-17b335ed9b20", "_blank")} className="px-12 py-4 border-2 border-white text-white font-bold hover:bg-white hover:text-black transition-all duration-300">
+            Follow DJO
           </button>
         </div>
       </div>
