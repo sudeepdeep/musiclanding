@@ -172,7 +172,7 @@ export default function MusicPage() {
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             {/* Album Cover */}
             <div className="relative">
-              <div className="w-[380px] h-[360px] md:w-[400px] md:h-[380px] flex justify-center items-center">
+              <div className="w-[360px] h-[340px] md:w-[400px] md:h-[380px] flex justify-center items-center">
                 <SpotifyEmbed song={slug} />
               </div>
             </div>
