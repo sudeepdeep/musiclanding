@@ -2,26 +2,26 @@ import { motion } from "framer-motion";
 import React from 'react';
 import "../components/Home.css";
 function News() {
-  const newsItems = [
-    {
-      title: "DJOS RELEASES NEW SINGLE 'THE CRUX'",
-      date: "March 15, 2025",
-      description: "The latest track from DJO's upcoming album is now available on all streaming platforms.",
-      link: "#"
-    },
-    {
-      title: "DJOS ANNOUNCES WORLD TOUR 2025",
-      date: "March 10, 2025",
-      description: "Tickets now on sale for the highly anticipated world tour starting this summer.",
-      link: "#"
-    },
-    {
-      title: "DJOS COLLABORATES WITH TOP ARTISTS",
-      date: "March 5, 2025",
-      description: "Exciting new collaborations coming soon. Stay tuned for more updates.",
-      link: "#"
-    }
-  ];
+const newsItems = [
+  {
+    title: "DJO SURPRISE-RELEASES 'THE CRUX DELUXE' ALBUM",
+    date: "September 12, 2025",
+    description: "DJO dropped a surprise deluxe edition of his third album with 12 additional tracks, released independently under AWAL.",
+    link: "https://en.wikipedia.org/wiki/The_Crux_(Djo_album)"
+  },
+  {
+    title: "DJO KICKS OFF 'ANOTHER BITE TOUR' FALL LEG",
+    date: "September 26, 2025",
+    description: "DJO began his Another Bite tour with a sold-out performance at College Street Music Hall, featuring former bandmates Post Animal as the opening act.",
+    link: "https://yaledailynews.com/blog/2025/09/29/djo-performs-to-sweaty-crowd-at-college-street-music-hall/"
+  },
+  {
+    title: "DJO ANNOUNCED FOR BRISTOL'S FORWARDS PRESENTS 2026",
+    date: "February 4, 2026",
+    description: "DJO will support Lorde at Bristol's Forwards Presents event on August 28, 2026, performing alongside artists like Audrey Hobert and Rose Gray.",
+    link: "https://www.nme.com/news/music/lorde-and-djo-lead-line-up-for-bristols-forwards-festival-2026-buy-tickets-3927189"
+  }
+];
 
   return (
     <section className="news-section py-16 bg-black" id="news">
@@ -67,6 +67,8 @@ function News() {
               </p>
               <a
                 href={news.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-red-400 hover:text-red-300 font-semibold text-sm transition-colors"
               >
                 Read More
