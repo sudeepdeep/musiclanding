@@ -207,7 +207,7 @@ function Footer() {
         {/* Footer Bottom */}
         <div className="border-t border-white/20 pt-8 text-center">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400">© 2025 DJO. All rights reserved.</p>
+            <p className="text-gray-400">© 2026 DJO. All rights reserved.</p>
             <div className="flex gap-6 text-sm">
               <a
                 href="/privacy"

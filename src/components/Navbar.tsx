@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion } from "framer-motion";
 import { MenuIcon, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import "./Home.css";
@@ -28,8 +28,12 @@ function Navbar() {
     };
   }, [lastScrollY]);
 
-  function handleShowHam(){
+  function handleShowHam() {
     setShowHam(!showHam);
+  }
+
+  function handleClickonCD() {
+    window.location.href = "/music/end-of-beginning";
   }
   return (
     <>
@@ -44,10 +48,149 @@ function Navbar() {
           scrollDirection === "down" ? "-translate-y-full" : "translate-y-0"
         }`}
       >
+        <nav className="fixed top-0 left-0 w-full z-50 px-6 py-4">
+          <div className="max-w-7xl mx-auto flex items-center justify-between liquid-glass px-8 py-3 rounded-full border-white/10 shadow-2xl">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl font-bold tracking-tighter distorted-text">
+                <img
+                  className="md:w-18 w-13 md:h-6 h-5 inline-block"
+                  src="https://store.djomusic.com/cdn/shop/files/CruxDeluxe_LOGO_410x.png?v=1757606871"
+                  alt=""
+                />
+              </span>
+            </div>
+            <div className="hidden md:flex items-center space-x-10 text-sm font-medium tracking-widest uppercase">
+              <a
+                className="hover:text-primary transition-colors duration-300"
+                href="#"
+              >
+                News
+              </a>
+
+              <a
+                className="hover:text-primary transition-colors duration-300"
+                href="#"
+              >
+                Tour
+              </a>
+              <a
+                className="hover:text-primary transition-colors duration-300"
+                href="#"
+              >
+                Store
+              </a>
+              <a
+                className="hover:text-primary transition-colors duration-300"
+                href="#"
+              >
+                Music
+              </a>
+              <a
+                className="hover:text-primary transition-colors duration-300"
+                href="#"
+              >
+                Mailing
+              </a>
+            </div>
+            <div className="hidden md:flex items-center gap-4">
+              {/* <button className="p-2 hover:bg-white/5 rounded-full transition-colors">
+                <span className="material-icons text-xl">search</span>
+              </button> */}
+              <button
+                onClick={handleClickonCD}
+                className="bg-primary hover:bg-primary/80 text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all glow-effect"
+              >
+                Latest Drop
+              </button>
+            </div>
+            <div className="flex justify-end md:hidden">
+              <AnimatePresence mode="wait">
+                {showHam ? (
+                  <motion.div
+                    key="menu-icon"
+                    initial={{ opacity: 0, rotate: -90 }}
+                    animate={{ opacity: 1, rotate: 0 }}
+                    exit={{ opacity: 0, rotate: 90 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <MenuIcon
+                      className="w-8 h-8 cursor-pointer"
+                      onClick={() => handleShowHam()}
+                    />
+                  </motion.div>
+                ) : (
+                  <>
+                    <motion.div
+                      key="close-icon"
+                      initial={{ opacity: 0, rotate: -90 }}
+                      animate={{ opacity: 1, rotate: 0 }}
+                      exit={{ opacity: 0, rotate: 90 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute top-3 right-6 z-50"
+                    >
+                      <X
+                        className="w-8 h-8 cursor-pointer text-white"
+                        onClick={() => handleShowHam()}
+                      />
+                    </motion.div>
+
+                    <motion.div
+                      key="menu-overlay"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="fixed top-16 left-0 w-full h-[70vh] bg-black/90 z-40"
+                    >
+                      <motion.div
+                        className="flex flex-col items-center mt-[120px] gap-10 h-full"
+                        initial={{ y: -50, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.1, duration: 0.4 }}
+                      >
+                        {/* <motion.img
+                          src="https://store.djomusic.com/cdn/shop/files/CruxDeluxe_LOGO_410x.png?v=1757606871"
+                          alt="djo-music"
+                          className="w-24 mb-10"
+                          initial={{ scale: 0.8, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ delay: 0.2, duration: 0.4 }}
+                        /> */}
+
+                        {["NEWS", "TOUR", "STORE", "MUSIC", "MAILING LIST"].map(
+                          (item, index) => (
+                            <motion.a
+                              key={item}
+                              href={`#${item.toLowerCase().replace(" ", "")}`}
+                              className="nav-link text-2xl text-white hover:text-gray-300 transition-colors"
+                              onClick={() => handleShowHam()}
+                              initial={{ x: -50, opacity: 0 }}
+                              animate={{ x: 0, opacity: 1 }}
+                              transition={{
+                                delay: 0.3 + index * 0.1,
+                                duration: 0.4,
+                                type: "spring",
+                                stiffness: 100,
+                              }}
+                              whileHover={{ scale: 1.1, x: 10 }}
+                              whileTap={{ scale: 0.95 }}
+                            >
+                              {item}
+                            </motion.a>
+                          ),
+                        )}
+                      </motion.div>
+                    </motion.div>
+                  </>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+        </nav>
         {/* Left spacer */}
         {/* <div className="flex-1"></div> */}
 
-        <div className="flex flex-1  md:justify-start justify-center">
+        {/* <div className="flex flex-1  md:justify-start justify-center">
           <div className="flex gap-3">
             <a
               href="https://instagram.com/djomusic"
@@ -65,10 +208,10 @@ function Navbar() {
               />
             </a>
           </div>
-        </div>
+        </div> */}
 
         {/* Center navigation links */}
-        <div className="hidden md:flex gap-[50px] text-[15px]">
+        {/* <div className="hidden md:flex gap-[50px] text-[15px]">
            <a href="#news" className="nav-link">
             NEWS
           </a>
@@ -84,11 +227,10 @@ function Navbar() {
           <a href="#mail" className="nav-link">
             MAILING LIST
           </a>
-        </div>
-              
+        </div> */}
 
         {/* apply transition for X and ham */}
-        <div className="flex justify-end md:hidden">
+        {/* <div className="flex justify-end md:hidden">
   <AnimatePresence mode="wait">
     {showHam ? (
       <motion.div
@@ -167,13 +309,13 @@ function Navbar() {
       </>
     )}
   </AnimatePresence>
-</div>
+</div> */}
 
         {/* Right social media icons */}
-        <div className="hidden flex-1 md:flex justify-end">
+        {/* <div className="hidden flex-1 md:flex justify-end">
           <div className="flex gap-3">
             <a
-              href="https://instagram.com/djomusic"
+              href="https://www.instagram.com/djotime/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-white/60 hover:text-white transition-colors duration-300"
@@ -185,7 +327,7 @@ function Navbar() {
             </a>
 
             <a
-              href="https://x.com/djomusic"
+              href="https://x.com/djotime"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-white/60 hover:text-white transition-colors duration-300"
@@ -197,7 +339,7 @@ function Navbar() {
             </a>
 
             <a
-              href="http://youtube.com/@djomusic887"
+              href="https://www.youtube.com/@djomusic887"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-white/60 hover:text-white transition-colors duration-300"
@@ -209,18 +351,18 @@ function Navbar() {
             </a>
 
             <a
-              href="https://open.spotify.com/artist/djo"
+              href="https://www.tiktok.com/@djo_time?lang=en"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-white/60 hover:text-white transition-colors duration-300"
-              aria-label="Spotify"
+              aria-label="Tiktok"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z" />
-              </svg>
+          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+        </svg>
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

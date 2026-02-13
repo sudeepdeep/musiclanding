@@ -40,7 +40,7 @@ const newsItems = [
               NEWS
             </span>
           </h2>
-          <p className="text-gray-400 text-xl md:text-2xl">Stay updated with the latest from <img className="w-20 h-8 inline-block" src="https://store.djomusic.com/cdn/shop/files/CruxDeluxe_LOGO_410x.png?v=1757606871" alt="" /></p>
+          <p className="text-gray-400 text-xl md:text-2xl">Stay updated with the latest from <img className="md:w-20 w-13 md:h-8 h-5 inline-block" src="https://store.djomusic.com/cdn/shop/files/CruxDeluxe_LOGO_410x.png?v=1757606871" alt="" /></p>
         </div>
         
         <div className="grid md:grid-cols-3 gap-8">

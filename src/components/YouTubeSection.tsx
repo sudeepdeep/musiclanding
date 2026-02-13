@@ -6,7 +6,7 @@ import {
   useMotionValue
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import { AppleMusicIcon, SpotifyIcon, YoutubeIcon } from "../assets/Icons";
+import { AmazonMusicIcon, AppleMusicIcon, SoundCloudIcon, SpotifyIcon, YoutubeIcon } from "../assets/Icons";
 import JoeGif from "../assets/joekerry.gif";
 
 function Gallery({ items, setIndex }: any) {
@@ -306,14 +306,26 @@ function YouTubeSection() {
       <div className="absolute inset-0 bg-black opacity-50"></div>
             <img src={JoeGif}  className="w-[100%] h-[100%] object-cover" alt="JoeGif" />
 
-            <div className="absolute inset-0 flex items-center justify-center z-10 ">
+            <div className="absolute inset-0 flex md:flex-row flex-col gap-5 items-center justify-center z-10 ">
               <p className="text-2xl md:text-4xl font-black text-white mr-5">
                 FOLLOW ON{" "}
               </p>
               <div className="flex gap-5">
-              <YoutubeIcon h={8} w={8} />
-                <SpotifyIcon h={8} w={8} />
-                <AppleMusicIcon h={8} w={8} />
+                <a href="https://www.youtube.com/@djomusic887" target="_blank">
+                  <YoutubeIcon h={8} w={8} />
+                </a>
+                <a href="https://open.spotify.com/artist/5p9HO3XC5P3BLxJs5Mtrhm" target="_blank">
+                  <SpotifyIcon h={8} w={8} />
+                </a>
+                <a href="https://music.apple.com/us/artist/djo/1473178582" target="_blank">
+                  <AppleMusicIcon h={8} w={8} />
+                </a>
+                <a href="https://soundcloud.com/djokyri" target="_blank">
+                  <SoundCloudIcon h={8} w={8} />
+                </a>
+                <a href="https://music.amazon.com/artists/B005I4FX1Y/djo" target="_blank">
+                  <AmazonMusicIcon h={8} w={8} />
+                </a>
               </div>
             </div>
           </div>

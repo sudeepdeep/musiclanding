@@ -13,6 +13,7 @@ import {
   YoutubeMusicIcon,
 } from "../assets/Icons";
 import { spotifyMapping } from "../utils/constants";
+import Footer from "./Footer";
 
 const SONGS_DATABASE: any = {
   "the-crux": {
@@ -279,6 +280,7 @@ export default function AlbumPage() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

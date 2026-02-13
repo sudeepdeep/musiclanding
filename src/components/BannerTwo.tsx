@@ -1,19 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { motion, useScroll, useTransform, useAnimation } from "framer-motion";
+// import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { CalendarIcon, Music } from "lucide-react";
+import { SpotifyIcon } from "../assets/Icons";
 import { mainLogo } from "../utils/constants";
 import Navbar from "./Navbar";
-import vintageCd from "../assets/vintage-cd.png";
-import cdBanner from "../assets/crux-banner.png";
-import { MusicIcon, SpotifyIcon } from "../assets/Icons";
 
-function BannerTwo() {
+function BannerOne() {
   // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const { scrollY } = useScroll();
   // const y = useTransform(scrollY, [0, 500], [0, 150]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
-  const scale = useTransform(scrollY, [0, 200], [1, 0.95]);
-  const rotateX = useTransform(scrollY, [0, 300], [0, 2]);
-  const rotateY = useTransform(scrollY, [0, 300], [0, 2]);
+  // const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   // useEffect(() => {
   //   const handleMouseMove = (e: MouseEvent) => {
@@ -32,61 +27,43 @@ function BannerTwo() {
   }
 
   function handleClickonAlbum() {
-    window.location.href = "/album/the-crux";
+    window.open("https://djo.ffm.to/thecruxdeluxe", "_blank", "noopener,noreferrer");
   }
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-black">
-      {/* Premium Dynamic Background with Sophisticated Animated Shapes */}
+      {/* Dynamic Background with Animated Shapes */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Main Premium Blue-Gold Gradient Blur - Large and Dominant */}
+        {/* Main Blue Blur - Large and Dominant */}
         <motion.div
-          className="absolute -top-24 -left-24 w-[1200px] h-[1200px] rounded-full blur-[100px]"
+          className="absolute -top-20 -left-20 w-[1000px] h-[1000px] rounded-full blur-3xl"
           style={{
-            background: `radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.35) 0%, rgba(99, 102, 241, 0.25) 35%, rgba(234, 179, 8, 0.15) 60%, transparent 80%)`,
+            background: `radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, rgba(37, 99, 235, 0.2) 40%, transparent 70%)`,
           }}
           animate={{
-            scale: [1, 1.1, 1],
-            x: [0, 80, -40, 0],
-            y: [0, -60, 40, 0],
-            rotate: [0, 45, 90, 135, 180],
+            scale: [1, 1.3, 1.1, 1],
+            x: [0, 150, -50, 0],
+            y: [0, -100, 50, 0],
+            rotate: [0, 90, 180, 360],
           }}
           transition={{
-            duration: 35,
+            duration: 25,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         />
 
-        {/* Secondary Emerald-Cyan Blur - Right Side */}
+        {/* Secondary Blue Blur - Right Side */}
         <motion.div
-          className="absolute top-1/4 -right-32 w-[900px] h-[900px] rounded-full blur-[80px]"
+          className="absolute top-1/3 -right-40 w-[800px] h-[800px] rounded-full blur-3xl"
           style={{
-            background: `radial-gradient(circle at 70% 30%, rgba(16, 185, 129, 0.25) 0%, rgba(34, 211, 238, 0.2) 40%, rgba(99, 102, 241, 0.1) 60%, transparent 80%)`,
+            background: `radial-gradient(circle, rgba(96, 165, 250, 0.35) 0%, rgba(59, 130, 246, 0.15) 50%, transparent 70%)`,
           }}
           animate={{
-            scale: [1.1, 1, 1.2, 1.1],
-            x: [0, -80, 40, 0],
-            y: [0, 60, -30, 0],
-            rotate: [180, 135, 90, 45, 0],
-          }}
-          transition={{
-            duration: 40,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-
-        {/* Deep Purple Accent Blur - Bottom Left */}
-        <motion.div
-          className="absolute -bottom-32 left-1/4 w-[800px] h-[800px] rounded-full blur-[70px]"
-          style={{
-            background: `radial-gradient(circle at 30% 70%, rgba(147, 51, 234, 0.25) 0%, rgba(99, 102, 241, 0.2) 35%, rgba(59, 130, 246, 0.1) 55%, transparent 75%)`,
-          }}
-          animate={{
-            scale: [1, 1.2, 0.95, 1],
-            x: [0, -100, 60, 0],
-            y: [0, -50, 25, 0],
+            scale: [1.2, 1, 1.3, 1.2],
+            x: [0, -100, 50, 0],
+            y: [0, 80, -40, 0],
+            rotate: [360, 270, 180, 0],
           }}
           transition={{
             duration: 30,
@@ -95,88 +72,94 @@ function BannerTwo() {
           }}
         />
 
-        {/* Warm Amber Accent Blur - Center Right */}
+        {/* Cyan Accent Blur - Bottom */}
         <motion.div
-          className="absolute top-1/3 right-1/3 w-[700px] h-[700px] rounded-full blur-[60px]"
+          className="absolute -bottom-40 left-1/3 w-[700px] h-[700px] rounded-full blur-3xl"
           style={{
-            background: `radial-gradient(circle at 70% 70%, rgba(245, 158, 11, 0.2) 0%, rgba(251, 191, 36, 0.15) 40%, rgba(16, 185, 129, 0.1) 60%, transparent 80%)`,
+            background: `radial-gradient(circle, rgba(34, 211, 238, 0.3) 0%, rgba(6, 182, 212, 0.15) 40%, transparent 70%)`,
           }}
           animate={{
-            scale: [1.05, 1.2, 1, 1.05],
-            x: [0, 50, -60, 0],
-            y: [0, -70, 40, 0],
-            rotate: [0, 60, 120, 180, 240, 300, 360],
+            scale: [1, 1.4, 0.9, 1],
+            x: [0, -120, 80, 0],
+            y: [0, -60, 30, 0],
           }}
           transition={{
-            duration: 35,
+            duration: 22,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         />
 
-        {/* Subtle Top Accent Blur */}
+        {/* Purple Accent Blur - Center Right */}
         <motion.div
-          className="absolute top-16 right-1/4 w-[500px] h-[500px] rounded-full blur-[50px]"
+          className="absolute top-1/2 right-1/4 w-[600px] h-[600px] rounded-full blur-3xl"
           style={{
-            background: `radial-gradient(circle, rgba(147, 197, 253, 0.25) 0%, rgba(96, 165, 250, 0.15) 50%, transparent 70%)`,
+            background: `radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, rgba(79, 70, 229, 0.1) 50%, transparent 70%)`,
           }}
           animate={{
-            scale: [1, 1.3, 1],
-            x: [0, -40, 0],
-            y: [0, 40, 0],
-            opacity: [0.4, 0.7, 0.4],
+            scale: [1.1, 1.3, 1, 1.1],
+            x: [0, 60, -80, 0],
+            y: [0, -80, 60, 0],
+            rotate: [0, 120, 240, 360],
           }}
           transition={{
-            duration: 20,
+            duration: 28,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         />
 
-        {/* Floating Premium Particles Effect */}
-        {[...Array(12)].map((_, i) => (
+        {/* Small Accent Blur - Top Right */}
+        <motion.div
+          className="absolute top-20 right-1/3 w-[400px] h-[400px] rounded-full blur-2xl"
+          style={{
+            background: `radial-gradient(circle, rgba(147, 197, 253, 0.3) 0%, transparent 60%)`,
+          }}
+          animate={{
+            scale: [1, 1.5, 1],
+            x: [0, -50, 0],
+            y: [0, 50, 0],
+            opacity: [0.3, 0.6, 0.3],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+
+        {/* Floating Particles Effect */}
+        {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-3 h-3 bg-gradient-to-br from-blue-400/60 to-purple-400/60 rounded-full blur-sm shadow-lg"
+            className="absolute w-2 h-2 bg-blue-400/40 rounded-full blur-sm"
             style={{
-              left: `${(i * 18) % 100}%`,
-              top: `${(i * 12) % 100}%`,
+              left: `${(i * 12) % 100}%`,
+              top: `${(i * 15) % 100}%`,
             }}
             animate={{
-              y: [0, -120, 0],
-              x: [0, Math.sin(i) * 80, 0],
-              opacity: [0, 0.8, 0],
-              scale: [0, 1.2, 0],
+              y: [0, -100, 0],
+              x: [0, Math.sin(i) * 50, 0],
+              opacity: [0, 1, 0],
+              scale: [0, 1.5, 0],
             }}
             transition={{
-              duration: 10 + i * 1.5,
+              duration: 8 + i * 2,
               repeat: Infinity,
-              delay: i * 0.3,
+              delay: i * 0.5,
               ease: "easeInOut",
             }}
           />
         ))}
 
-        {/* Premium Gradient Overlay for Depth */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-transparent to-black/50" />
+        {/* Gradient Overlay for Depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60" />
 
-        {/* Subtle Noise Texture Overlay for Premium Feel */}
+        {/* Noise Texture Overlay for Premium Feel */}
         <div
-          className="absolute inset-0 opacity-[0.05]"
+          className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-          }}
-        />
-
-        {/* Subtle Grid Lines for Professional Aesthetic */}
-        <div
-          className="absolute inset-0 opacity-5"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: '50px 50px',
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
           }}
         />
       </div>
@@ -186,12 +169,12 @@ function BannerTwo() {
         <Navbar />
       </div>
 
-      {/* Main Content with Premium Parallax Effect */}
+      {/* Main Content */}
       <motion.div
-        className="relative z-40 flex items-center min-h-screen px-8 md:px-16 lg:px-24"
-        style={{ opacity }}
+        className="relative z-40 flex items-center min-h-screen px-8 md:px-16 lg:px-24 mt-20 md:mt-0"
+        // style={{ opacity }}
       >
-        <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl w-full flex flex-col-reverse lg:flex-row items-center justify-between gap-[20px]">
           {/* Left Side - Content */}
           <div className="space-y-8">
             {/* Logo */}
@@ -205,12 +188,19 @@ function BannerTwo() {
             >
               <h1 className="font-black text-white leading-tight">
                 <motion.span
-                  className="text-6xl md:text-8xl block uppercase relative"
+                  className="text-4xl md:text-8xl block uppercase relative"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
                 >
-                  BACK ON YOU
+                  BACK ON <span
+                                className="text-transparent"
+                                style={
+                                  {
+                                    WebkitTextStroke: "3px white",
+                                  } as React.CSSProperties
+                                }
+                              >YOU</span>
                   {/* Glowing text effect */}
                   {/* <span className="absolute inset-0 blur-2xl bg-gradient-to-r from-blue-500/50 to-cyan-500/50 -z-10" /> */}
                 </motion.span>
@@ -256,7 +246,7 @@ function BannerTwo() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.2 }}
-              className="grid grid-cols-3 gap-4 max-w-lg"
+              className="max-w-lg flex flex-row"
             >
               <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/10 backdrop-blur-md rounded-xl p-4 border border-blue-400/30 hover:border-blue-400/60 transition-all duration-300">
                 <motion.div
@@ -300,17 +290,23 @@ function BannerTwo() {
               </div> */}
 
               <motion.div
-                className="hidden md:block"
-                initial={{ opacity: 0, x: -100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1, delay: 0.3 }}
-              >
-                <img
-                  src={mainLogo}
-                  alt="DJO"
-                  className="w-24 md:w-24 h-auto filter drop-shadow-2xl"
-                />
-              </motion.div>
+                          className="block group cursor-pointer"
+                          initial={{ opacity: 0, x: -100 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 1, delay: 0.3 }}
+                        >
+                          <div className="relative">
+                            {/* Red blur background on hover */}
+                            <div className="absolute inset-0 bg-red-500 rounded-full blur-xl opacity-100 transition-opacity duration-500 h-[120px] w-[50px] ml-[20px] mt-[-10px]"></div>
+                            
+                            {/* Image */}
+                            <img
+                              src={mainLogo}
+                              alt="DJO"
+                              className="relative w-24 md:w-24 h-auto filter drop-shadow-2xl transition-transform duration-300 group-hover:scale-105"
+                            />
+                          </div>
+                        </motion.div>
             </motion.div>
 
             {/* Action Buttons with Enhanced Effects */}
@@ -323,19 +319,21 @@ function BannerTwo() {
               <motion.button
                 onClick={handleClickonCD}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 text-white font-semibold text-lg transition-all duration-300 shadow-lg hover:opacity-80"
+                className="flex items-center px-8 py-4 text-white font-semibold text-lg transition-all duration-300 shadow-lg hover:opacity-80"
                 style={{
                   backgroundColor: "rgba(59, 130, 246)",
                 }}
               >
-                Listen Now
+                <p>Listen Now</p> 
+                <Music />
               </motion.button>
               <motion.button
                 onClick={() => (window.location.href = "#tour")}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 border-2 border-white text-white font-semibold text-lg transition-all duration-300 hover:bg-white hover:text-black backdrop-blur-sm"
+                className="flex items-center px-8 py-4 border-2 border-white text-white font-semibold text-lg transition-all duration-300 hover:bg-white hover:text-black backdrop-blur-sm"
               >
-                Tour Dates
+                <p>Tour Dates</p>
+                <CalendarIcon />
               </motion.button>
             </motion.div>
           </div>
@@ -347,7 +345,7 @@ function BannerTwo() {
           >
             <motion.div
               className="relative group cursor-pointer"
-              whileHover={{ scale: 1.05 }}
+              // whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
               onClick={handleClickonAlbum}
               onHoverStart={() => {
@@ -390,35 +388,25 @@ function BannerTwo() {
         </div>
       </motion.div>
 
-      {/* Premium Scroll Indicator */}
+      {/* Scroll Indicator */}
       {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2.5 }}
+        transition={{ delay: 2 }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30"
       >
         <motion.div
-          animate={{ y: [0, 12, 0] }}
-          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center text-white/50 group cursor-pointer"
-          onClick={() => {
-            // Smooth scroll to next section
-            const nextSection = document.querySelector('[data-section="next"]');
-            if (nextSection) {
-              nextSection.scrollIntoView({ behavior: 'smooth' });
-            }
-          }}
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="flex flex-col items-center text-white/60"
         >
-          <span className="text-xs uppercase tracking-widest mb-3 font-light text-blue-300/70 group-hover:text-blue-300 transition-colors duration-300">
-            Scroll Down
-          </span>
-          <div className="w-8 h-12 border-2 border-white/40 rounded-full flex justify-center relative overflow-hidden">
+          <span className="text-sm uppercase tracking-wider mb-2">Explore</span>
+          <div className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center">
             <motion.div
-              animate={{ y: [0, 16, 0] }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-              className="w-1.5 h-4 bg-gradient-to-b from-blue-400 to-purple-500 rounded-full mt-2 shadow-lg"
+              animate={{ y: [0, 12, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="w-1 h-3 bg-white/60 rounded-full mt-2"
             />
-            <div className="absolute inset-0 rounded-full border-2 border-blue-400/30 animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
         </motion.div>
       </motion.div> */}
@@ -426,4 +414,4 @@ function BannerTwo() {
   );
 }
 
-export default BannerTwo;
+export default BannerOne;

@@ -1,6 +1,8 @@
+import { AlignRightIcon, XIcon } from "lucide-react";
+import { useState } from "react";
+import { SpotifyIcon } from "../assets/Icons";
 
 export default function SpotifyFixedPlayer() {
-
   // Replace this with your actual Spotify track URI
   // Format: spotify:track:TRACK_ID
   // You can get this from the Spotify share menu -> Copy Song Link -> Extract the ID
@@ -9,25 +11,45 @@ export default function SpotifyFixedPlayer() {
   // Or use album/playlist
   const spotifyAlbumId = "1xQGeKOIMZrPBUlDJuqZGQ"; // Example album
 
+  const [spotifyExtended, setSpotifyExtended] = useState(false);
+
+  function handleSpotifyExtended() {
+    setSpotifyExtended(!spotifyExtended);
+  }
 
   return (
-    <>
-      <div className="fixed -bottom-[65px] left-0 right-0 z-50">
-        <iframe
-          title={"spotify playlist"}
-          style={{ borderRadius: "0" }}
-          src={`https://open.spotify.com/embed/album/${spotifyAlbumId}?utm_source=generator&theme=0`}
-          // For album use: src={`https://open.spotify.com/embed/album/${spotifyAlbumId}?utm_source=generator&theme=0`}
-          // For playlist use: src={`https://open.spotify.com/embed/playlist/${spotifyPlaylistId}?utm_source=generator&theme=0`}
-          width="100%"
-          height="100%"
-          frameBorder="0"
-          allowFullScreen
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-          className="w-full h-full"
-        />
-      </div>
-    </>
+    <div className="h-[150px] w-[100%] fixed -bottom-[65px] left-0 right-0 z-50 text-white">
+      {spotifyExtended ? (
+        <>
+          <div
+            onClick={handleSpotifyExtended}
+            className="bg-[#191414] w-[50px] absolute right-0 cursor-pointer -top-6 h-[25px] flex items-center justify-center"
+          >
+            <XIcon className="w-[20px]" />
+          </div>
+          <iframe
+            title={"spotify playlist"}
+            style={{ borderRadius: "0" }}
+            src={`https://open.spotify.com/embed/album/${spotifyAlbumId}?utm_source=generator&theme=0`}
+            // For album use: src={`https://open.spotify.com/embed/album/${spotifyAlbumId}?utm_source=generator&theme=0`}
+            // For playlist use: src={`https://open.spotify.com/embed/playlist/${spotifyPlaylistId}?utm_source=generator&theme=0`}
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            className="w-full h-full"
+          />
+        </>
+      ) : (
+        <div
+          className="w-[50px] h-[100%] absolute right-0 cursor-pointer"
+          onClick={handleSpotifyExtended}
+        >
+          <SpotifyIcon />
+        </div>
+      )}
+    </div>
   );
 }

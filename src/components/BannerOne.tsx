@@ -4,6 +4,8 @@ import { CalendarIcon, Music } from "lucide-react";
 import { SpotifyIcon } from "../assets/Icons";
 import { mainLogo } from "../utils/constants";
 import Navbar from "./Navbar";
+import firstHalf from "../assets/first-half.jpg";
+import secondHalf from "../assets/secondhalf.png";
 
 function BannerOne() {
   // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -27,7 +29,11 @@ function BannerOne() {
   }
 
   function handleClickonAlbum() {
-    window.location.href = "/album/the-crux";
+    window.open(
+      "https://djo.ffm.to/thecruxdeluxe",
+      "_blank",
+      "noopener,noreferrer",
+    );
   }
 
   return (
@@ -35,7 +41,7 @@ function BannerOne() {
       {/* Dynamic Background with Animated Shapes */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Main Blue Blur - Large and Dominant */}
-        <motion.div
+        {/* <motion.div
           className="absolute -top-20 -left-20 w-[1000px] h-[1000px] rounded-full blur-3xl"
           style={{
             background: `radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, rgba(37, 99, 235, 0.2) 40%, transparent 70%)`,
@@ -51,10 +57,10 @@ function BannerOne() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-        />
+        /> */}
 
         {/* Secondary Blue Blur - Right Side */}
-        <motion.div
+        {/* <motion.div
           className="absolute top-1/3 -right-40 w-[800px] h-[800px] rounded-full blur-3xl"
           style={{
             background: `radial-gradient(circle, rgba(96, 165, 250, 0.35) 0%, rgba(59, 130, 246, 0.15) 50%, transparent 70%)`,
@@ -70,10 +76,10 @@ function BannerOne() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-        />
+        /> */}
 
         {/* Cyan Accent Blur - Bottom */}
-        <motion.div
+        {/* <motion.div
           className="absolute -bottom-40 left-1/3 w-[700px] h-[700px] rounded-full blur-3xl"
           style={{
             background: `radial-gradient(circle, rgba(34, 211, 238, 0.3) 0%, rgba(6, 182, 212, 0.15) 40%, transparent 70%)`,
@@ -88,7 +94,7 @@ function BannerOne() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-        />
+        /> */}
 
         {/* Purple Accent Blur - Center Right */}
         <motion.div
@@ -176,7 +182,7 @@ function BannerOne() {
       >
         <div className="max-w-7xl w-full flex flex-col-reverse lg:flex-row items-center justify-between gap-[20px]">
           {/* Left Side - Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 mx-auto">
             {/* Logo */}
 
             {/* Main Text with Enhanced Typography */}
@@ -186,33 +192,76 @@ function BannerOne() {
               transition={{ duration: 1, delay: 0.6 }}
               className="space-y-4"
             >
-              <h1 className="font-black text-white leading-tight">
-                <motion.span
-                  className="text-4xl md:text-8xl block uppercase relative"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.8 }}
-                >
-                  BACK ON <span
-                                className="text-transparent"
-                                style={
-                                  {
-                                    WebkitTextStroke: "3px white",
-                                  } as React.CSSProperties
-                                }
-                              >YOU</span>
-                  {/* Glowing text effect */}
-                  {/* <span className="absolute inset-0 blur-2xl bg-gradient-to-r from-blue-500/50 to-cyan-500/50 -z-10" /> */}
-                </motion.span>
-                <motion.span
-                  className="text-2xl block uppercase mt-2 text-blue-300/90 tracking-wider"
-                  initial={{ opacity: 0, x: -20 }}
+              <div className="flex items-center">
+                <motion.div
+                  className="block group cursor-pointer"
+                  initial={{ opacity: 0, x: -100 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 1 }}
+                  transition={{ duration: 1, delay: 0.3 }}
                 >
-                  Out now
-                </motion.span>
-              </h1>
+                  <div className="relative inline-block">
+                    {/* Neon glow container */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      {/* Outer diffuse glow - largest */}
+                      <div className="absolute w-40 h-40 bg-red-500 opacity-40 rounded-full blur-3xl"></div>
+
+                      {/* Middle glow - medium */}
+                      <div className="absolute w-32 h-32 bg-red-600 opacity-60 rounded-full blur-2xl"></div>
+
+                      {/* Inner glow - brightest */}
+                      <div className="absolute w-24 h-24 bg-red-500 opacity-80 rounded-full blur-xl"></div>
+
+                      {/* Core glow - most intense */}
+                      <div className="absolute w-20 h-20 bg-red-400 opacity-90 rounded-full blur-lg"></div>
+                    </div>
+
+                    {/* Image with enhanced shadows */}
+                    <img
+                      src={mainLogo}
+                      alt="DJO"
+                      className="relative z-10 w-24 md:w-24 h-auto 
+               drop-shadow-[0_0_15px_rgba(239,68,68,1)]
+               drop-shadow-[0_0_25px_rgba(220,38,38,0.8)]
+               drop-shadow-[0_0_35px_rgba(185,28,28,0.6)]
+               transition-all duration-300 
+               group-hover:scale-105 
+               group-hover:drop-shadow-[0_0_20px_rgba(248,113,113,1)]
+               group-hover:drop-shadow-[0_0_40px_rgba(239,68,68,1)]"
+                    />
+                  </div>
+                </motion.div>
+                ;
+                <h1 className="font-black text-white leading-tight">
+                  <motion.span
+                    className="text-4xl md:text-8xl block uppercase relative"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.8 }}
+                  >
+                    BACK ON{" "}
+                    <span
+                      className="text-transparent"
+                      style={
+                        {
+                          WebkitTextStroke: "3px white",
+                        } as React.CSSProperties
+                      }
+                    >
+                      YOU
+                    </span>
+                    {/* Glowing text effect */}
+                    {/* <span className="absolute inset-0 blur-2xl bg-gradient-to-r from-blue-500/50 to-cyan-500/50 -z-10" /> */}
+                  </motion.span>
+                  <motion.span
+                    className="text-2xl block uppercase mt-2 text-blue-300/90 tracking-wider"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 1 }}
+                  >
+                    Out now
+                  </motion.span>
+                </h1>
+              </div>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -248,7 +297,7 @@ function BannerOne() {
               transition={{ duration: 0.8, delay: 1.2 }}
               className="max-w-lg flex flex-row"
             >
-              <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/10 backdrop-blur-md rounded-xl p-4 border border-blue-400/30 hover:border-blue-400/60 transition-all duration-300">
+              {/* <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/10 backdrop-blur-md rounded-xl p-4 border border-blue-400/30 hover:border-blue-400/60 transition-all duration-300">
                 <motion.div
                   className="text-2xl md:text-3xl font-bold text-blue-300"
                   initial={{ scale: 0 }}
@@ -261,7 +310,7 @@ function BannerOne() {
                   <span>Trending on </span>
                   <SpotifyIcon />
                 </div>
-              </div>
+              </div> */}
               {/* <div className="bg-gradient-to-br from-cyan-500/20 to-cyan-600/10 backdrop-blur-md rounded-xl p-4 border border-cyan-400/30 hover:border-cyan-400/60 transition-all duration-300">
                 <motion.div
                   className="text-2xl md:text-3xl font-bold text-cyan-300"
@@ -288,19 +337,6 @@ function BannerOne() {
                   Release
                 </div>
               </div> */}
-
-              <motion.div
-                className="block"
-                initial={{ opacity: 0, x: -100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1, delay: 0.3 }}
-              >
-                <img
-                  src={mainLogo}
-                  alt="DJO"
-                  className="w-24 md:w-24 h-auto filter drop-shadow-2xl"
-                />
-              </motion.div>
             </motion.div>
 
             {/* Action Buttons with Enhanced Effects */}
@@ -318,7 +354,7 @@ function BannerOne() {
                   backgroundColor: "rgba(59, 130, 246)",
                 }}
               >
-                <p>Listen Now</p> 
+                <p>Listen Now</p>
                 <Music />
               </motion.button>
               <motion.button
@@ -333,17 +369,25 @@ function BannerOne() {
           </div>
 
           {/* Right Side - Visual Element */}
-          <motion.div
+
+          {/* <div className="relative w-[500px] h-[500px] rounded-sm">
+            <div className="absolute font-bold text-[100px]">CRUX</div>
+                <div className="absolute z-50 bottom-0">
+                  <img src = {firstHalf} alt="first" />
+                </div>
+                <div className="absolute w-[100%] h-[100%] top-[20px]">
+                  <img src = {secondHalf} alt="second" />
+                </div>
+          </div> */}
+          {/* <motion.div
             className="relative flex items-center justify-center"
             style={{ perspective: "1200px" }}
           >
             <motion.div
               className="relative group cursor-pointer"
-              // whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
               onClick={handleClickonAlbum}
               onHoverStart={() => {
-                // Reset animation by removing and re-adding the class
                 const img = document.querySelector(".imageanime");
                 if (img) {
                   img.classList.remove("imageanime");
@@ -352,16 +396,13 @@ function BannerOne() {
                 }
               }}
             >
-              {/* Image with animation that pauses on hover */}
               <img
                 className="imageanime group-hover:[animation-play-state:paused] w-96 h-96 rounded-2xl shadow-2xl transition-all duration-300"
                 src="https://i.scdn.co/image/ab67616d0000b273f4277fb50a1306e63cef99b4"
                 alt="spotify-banner"
               />
 
-              {/* Hover overlay - covers entire image area */}
               <div className="absolute inset-0 backdrop-blur-sm rounded-2xl flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none">
-                {/* Text */}
                 <div className="text-center transform translate-y-3 group-hover:translate-y-0 transition-all duration-300">
                   <h3 className="text-2xl md:text-3xl font-black text-white mb-2 tracking-wider">
                     VIEW ALBUM
@@ -371,14 +412,10 @@ function BannerOne() {
                   </p>
                 </div>
 
-                {/* Decorative line */}
-                {/* <div className="h-0.5 bg-gradient-to-r from-transparent via-white to-transparent mt-4 w-0 group-hover:w-4/5 transition-all duration-500" /> */}
               </div>
 
-              {/* Glow effect on hover */}
-              {/* <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 -z-10" /> */}
             </motion.div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </motion.div>
 
