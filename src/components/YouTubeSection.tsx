@@ -3,10 +3,16 @@ import {
   animate,
   AnimatePresence,
   motion,
-  useMotionValue
+  useMotionValue,
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import { AmazonMusicIcon, AppleMusicIcon, SoundCloudIcon, SpotifyIcon, YoutubeIcon } from "../assets/Icons";
+import {
+  AmazonMusicIcon,
+  AppleMusicIcon,
+  SoundCloudIcon,
+  SpotifyIcon,
+  YoutubeIcon,
+} from "../assets/Icons";
 import JoeGif from "../assets/joekerry.gif";
 
 function Gallery({ items, setIndex }: any) {
@@ -135,76 +141,77 @@ function YouTubeSection() {
 
   return (
     <>
-    <section
-      id="music"
-      className="relative bg-black py-20 px-8 md:px-16 lg:px-24 overflow-hidden"
-    >
-      {/* Background Gradient */}
-      <div className="absolute inset-0">
-        <div
-          className="absolute bottom-[26%] right-[6%] w-[500px] h-[500px] rounded-full opacity-40"
-          style={{
-            background: `radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%)`,
-          }}
-        />
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-6xl md:text-8xl font-black text-white mb-6">
-            LATEST{" "}
-            <span
-              className="text-transparent"
-              style={
-                {
-                  WebkitTextStroke: "3px white",
-                } as React.CSSProperties
-              }
-            >
-              VIDEOS
-            </span>
-          </h2>
-
-          <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Experience the music through exclusive content and live performances
-          </p>
-        </div>
-        {/* YouTube Videos Grid */}
-        <Gallery items={videos} setIndex={setSelectedIndex} />
-
-        <AnimatePresence>
-          {selectedIndex !== null && (
-            <>
-              {/* Overlay */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.9 }}
-                exit={{ opacity: 0 }}
-                key="overlay"
-                className="fixed inset-0 bg-black z-40"
-                onClick={() => setSelectedIndex(null)}
-              />
-
-              {/* Expanded Video */}
-              <SingleImage
-                key="image"
-                item={videos[selectedIndex]}
-                onClick={() => setSelectedIndex(null)}
-              />
-            </>
-          )}
-        </AnimatePresence>
-
-        <div className="text-center mt-12">
-          <button className="mx-auto px-12 py-4 border-2 border-white text-white font-bold hover:bg-white hover:text-black transition-all duration-300 flex gap-2 items-center">
-            View on  <span className="hidden md:block">YouTube</span> <YoutubeIcon />
-          </button>
+      <section
+        id="music"
+        className="relative bg-black py-20 px-8 md:px-16 lg:px-24 overflow-hidden"
+      >
+        {/* Background Gradient */}
+        <div className="absolute inset-0">
+          <div
+            className="absolute bottom-[26%] right-[6%] w-[500px] h-[500px] rounded-full opacity-40"
+            style={{
+              background: `radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%)`,
+            }}
+          />
         </div>
 
+        <div className="relative z-10 max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-6xl md:text-8xl font-black text-white mb-6">
+              LATEST{" "}
+              <span
+                className="text-transparent"
+                style={
+                  {
+                    WebkitTextStroke: "3px white",
+                  } as React.CSSProperties
+                }
+              >
+                VIDEOS
+              </span>
+            </h2>
 
-        {/* FOLLOW ON Section with Enhanced Layout */}
-        {/* <div className="mt-20">
+            <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+              Experience the music through exclusive content and live
+              performances
+            </p>
+          </div>
+          {/* YouTube Videos Grid */}
+          <Gallery items={videos} setIndex={setSelectedIndex} />
+
+          <AnimatePresence>
+            {selectedIndex !== null && (
+              <>
+                {/* Overlay */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 0.9 }}
+                  exit={{ opacity: 0 }}
+                  key="overlay"
+                  className="fixed inset-0 bg-black z-40"
+                  onClick={() => setSelectedIndex(null)}
+                />
+
+                {/* Expanded Video */}
+                <SingleImage
+                  key="image"
+                  item={videos[selectedIndex]}
+                  onClick={() => setSelectedIndex(null)}
+                />
+              </>
+            )}
+          </AnimatePresence>
+
+          <div className="text-center mt-12">
+            <button className="mx-auto px-12 py-4 border-2 border-white text-white font-bold hover:bg-white hover:text-black transition-all duration-300 flex gap-2 items-center">
+              View on <span className="hidden md:block">YouTube</span>{" "}
+              <YoutubeIcon />
+            </button>
+          </div>
+
+          {/* FOLLOW ON Section with Enhanced Layout */}
+          {/* <div className="mt-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -279,17 +286,14 @@ function YouTubeSection() {
           </div>
         </div> */}
 
-
-        {/* I am making spotify and apple cards */}
-        {/* <div className="w-[100%] h-[400px] flex justify-center items-center gap-5 mt-10">
+          {/* I am making spotify and apple cards */}
+          {/* <div className="w-[100%] h-[400px] flex justify-center items-center gap-5 mt-10">
           <div className="w-[25%] h-[400px]">
             <DJOSpotify artist={"djo"} height={400} width={320} />
           </div> */}
           {/* <div className="w-[25%] h-[300px] overflow-hidden">
             <AppleMusicEmbed link="https://music.apple.com/us/album/the-crux-deluxe/1837525420" height={150} width={320} />
           </div> */}
-
-        
 
           {/* <div className="w-[35%] h-[400px]">
             <AppleMusicEmbed link="https://music.apple.com/us/album/the-crux-deluxe/1837525420" height={400} width={350} />
@@ -299,38 +303,61 @@ function YouTubeSection() {
 
 
         </div> */}
-      </div>
-    </section>
+        </div>
+      </section>
 
-    <div className="w-[100%] h-[500px] overflow-hidden relative">
-      <div className="absolute inset-0 bg-black opacity-50"></div>
-            <img src={JoeGif}  className="w-[100%] h-[100%] object-cover" alt="JoeGif" />
+      <div className="w-[100%] h-[500px] overflow-hidden relative">
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <img
+          src={JoeGif}
+          className="w-[100%] h-[100%] object-cover"
+          alt="JoeGif"
+        />
 
-            <div className="absolute inset-0 flex md:flex-row flex-col gap-5 items-center justify-center z-10 ">
-              <p className="text-2xl md:text-4xl font-black text-white mr-5">
-                FOLLOW ON{" "}
-              </p>
-              <div className="flex gap-5">
-                <a href="https://www.youtube.com/@djomusic887" target="_blank">
-                  <YoutubeIcon h={8} w={8} />
-                </a>
-                <a href="https://open.spotify.com/artist/5p9HO3XC5P3BLxJs5Mtrhm" target="_blank">
-                  <SpotifyIcon h={8} w={8} />
-                </a>
-                <a href="https://music.apple.com/us/artist/djo/1473178582" target="_blank">
-                  <AppleMusicIcon h={8} w={8} />
-                </a>
-                <a href="https://soundcloud.com/djokyri" target="_blank">
-                  <SoundCloudIcon h={8} w={8} />
-                </a>
-                <a href="https://music.amazon.com/artists/B005I4FX1Y/djo" target="_blank">
-                  <AmazonMusicIcon h={8} w={8} />
-                </a>
-              </div>
-            </div>
+        <div className="absolute inset-0 flex md:flex-row flex-col gap-5 items-center justify-center z-10 ">
+          <p className="text-2xl md:text-4xl font-black text-white mr-5">
+            FOLLOW ON{" "}
+          </p>
+          <div className="flex gap-5">
+            <a
+              href="https://www.youtube.com/@djomusic887"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <YoutubeIcon h={8} w={8} />
+            </a>
+            <a
+              href="https://open.spotify.com/artist/5p9HO3XC5P3BLxJs5Mtrhm"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <SpotifyIcon h={8} w={8} />
+            </a>
+            <a
+              href="https://music.apple.com/us/artist/djo/1473178582"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AppleMusicIcon h={8} w={8} />
+            </a>
+            <a
+              href="https://soundcloud.com/djokyri"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <SoundCloudIcon h={8} w={8} />
+            </a>
+            <a
+              href="https://music.amazon.com/artists/B005I4FX1Y/djo"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AmazonMusicIcon h={8} w={8} />
+            </a>
           </div>
-
-          </>
+        </div>
+      </div>
+    </>
   );
 }
 

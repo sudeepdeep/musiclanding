@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { AnimatePresence, motion } from "framer-motion";
 import { MenuIcon, X } from "lucide-react";
 import { useEffect, useState } from "react";
