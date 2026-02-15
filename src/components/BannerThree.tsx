@@ -30,8 +30,18 @@ function BannerThree() {
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFqBpaLmxAHwd3tAMSnrP3wD6FI3NTZ2sBUGpR0GgWDCfTddxqOlg-A4c0UP1y5f_RBdq1ogVHT6CnFJ7Ld9cnTYPgUXeF1GzHQVX-vm-k-c2xNDXfYXXBjZpnPbgwPOUpmKVUyXpTMQwXVt2UUBbHUh6gP_3WYDUJC3L4R-DTQ5A89TnU4v9DE71oFPuFEsZY2tWZ8nVQ9YpoyEMLGugChytM_ArjZm3qHiSFaahNNC6mYLwS0CGFIT3w_01RUejiWtOr1uq03nZo"
         />
       </div>
+
+      
+     <motion.div
+  className="absolute right-0 top-[28%] blur-sm"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-audio-waveform-icon lucide-audio-waveform w-[30rem] h-[30rem] md:w-[40rem] md:h-[40rem]">
+    <path d="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2"/>
+  </svg>
+</motion.div>
+
       <div className="relative z-10 text-center px-6">
-        <h1 className="text-8xl md:text-[12rem] font-extrabold tracking-tighter mb-4 leading-none uppercase">
+        <h1 className="text-8xl md:text-[10rem] font-extrabold tracking-tighter mb-4 leading-none uppercase">
           BACK ON{" "}
           <span
             className="text-transparent"
@@ -48,16 +58,17 @@ function BannerThree() {
           Experience the new single from <br />
           The Crux album
         </p>
+
         <div className="mt-12 flex flex-col md:flex-row gap-6 justify-center">
-          <a
-            className="px-10 py-4 bg-primary text-white font-bold  hover:scale-105 transition-transform"
+          
+           <a className="px-10 py-4 bg-primary text-white font-bold hover:bg-primary/80"
             href="#releases"
             onClick={handleClickonCD}
           >
             LATEST ALBUM
           </a>
-          <a
-            className="px-10 py-4 border border-white/30 glass font-bold  hover:bg-white/10 transition-colors"
+          
+           <a className="px-10 py-4 border border-white/30 glass font-bold hover:bg-white/10 transition-colors"
             href="#tour"
           >
             VIEW TOUR DATES

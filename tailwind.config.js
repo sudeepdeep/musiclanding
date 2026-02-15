@@ -7,7 +7,7 @@ module.exports = {
         primary: "#3b82f6",
         "background-light": "#f7f6f8",
         "background-dark": "#17141e",
-        charcoal: "#1F2937",
+        // charcoal: "#1F2937",
       },
       fontFamily: {
         poppins: ["Poppins"],

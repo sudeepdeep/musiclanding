@@ -344,8 +344,9 @@ function YouTubeSection() {
               href="https://soundcloud.com/djokyri"
               target="_blank"
               rel="noreferrer"
+              className="mt-[-5px]"
             >
-              <SoundCloudIcon h={8} w={8} />
+              <SoundCloudIcon h={10} w={10} />
             </a>
             <a
               href="https://music.amazon.com/artists/B005I4FX1Y/djo"
@@ -354,7 +355,7 @@ function YouTubeSection() {
             >
               <AmazonMusicIcon h={8} w={8} />
             </a>
-          </div>
+        </div>
         </div>
       </div>
     </>

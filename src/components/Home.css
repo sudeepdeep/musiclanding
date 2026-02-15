@@ -63,6 +63,19 @@
 
   animation: noiseMove 0.5s steps(2) infinite;
 }
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
 .imageanime {
   animation: infiimage 8s ease-in-out infinite;
   transform-style: preserve-3d;

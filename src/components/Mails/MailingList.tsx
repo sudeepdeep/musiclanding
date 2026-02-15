@@ -87,8 +87,7 @@ console.log(response)
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <h2 className="text-4xl md:text-8xl font-black text-white mb-6">
-          STAY
-          <br />
+          MAILING {" "}
           <span
             className="text-transparent"
             style={
@@ -97,7 +96,7 @@ console.log(response)
               } as React.CSSProperties
             }
           >
-            CONNECTED
+            LIST
           </span>
         </h2>
 

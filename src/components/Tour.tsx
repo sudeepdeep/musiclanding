@@ -28,6 +28,7 @@ function Tour() {
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
+
         <div className="text-center mb-16">
           <h2 className="text-6xl md:text-8xl font-black text-white mb-6">
             WORLD{" "}
