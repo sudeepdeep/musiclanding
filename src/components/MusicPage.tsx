@@ -172,13 +172,13 @@ export default function MusicPage() {
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             {/* Album Cover */}
             <div className="relative">
-              <div className="w-[360px] h-[340px] md:w-[400px] md:h-[380px] flex justify-center items-center">
+              <div className="w-full md:w-[400px] md:h-[380px] flex justify-center items-center">
                 <SpotifyEmbed song={slug} />
               </div>
             </div>
 
             {/* Song Info */}
-            <div className="flex flex-col justify-center space-y-6">
+            <div className="flex flex-col justify-center space-y-6 mt-[-65px] md:mt-[0px]">
               <div className="space-y-4">
                 <div className="inline-block border border-white/20 px-4 py-2">
                   <span className="text-xs tracking-widest uppercase text-white/70">
@@ -255,7 +255,16 @@ export default function MusicPage() {
           <div className="space-y-6">
             <div className="text-center md:text-left">
               <h2 className="text-3xl font-bold tracking-tight mb-2">
-                LISTEN NOW
+                LISTEN <span
+                            className="text-transparent"
+                            style={
+                              {
+                                WebkitTextStroke: "3px white",
+                              } as React.CSSProperties
+                            }
+                          >
+                            NOW
+                          </span>
               </h2>
               <p className="text-white/50 text-sm tracking-widest uppercase">
                 Available on {Object.keys(song.platforms).length} Platforms

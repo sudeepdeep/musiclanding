@@ -11,6 +11,7 @@ import Tour from "../components/Tour";
 import YouTubeSection from "../components/YouTubeSection";
 import { CrossIcon, XIcon } from "lucide-react";
 import BannerThree from "../components/BannerThree";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 function Home() {
   const [showBanner, setShowBanner] = useState(false);
@@ -171,6 +172,67 @@ function Home() {
           </div>
         </>
       )}
+
+           <motion.div
+  className="absolute left-0 md:top-[18%] top-[10%] blur-sm z-[10] opacity-50 rotate-[-15deg]"
+  
+>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-music2-icon lucide-music-2 w-[5rem] h-[5rem] md:w-[15rem] md:h-[15rem]"><circle cx="8" cy="18" r="4"/><path d="M12 18V2l7 4"/></svg>
+ 
+</motion.div>
+
+
+     <motion.div
+  className="absolute right-10 md:top-[32%] top-[25.5%] blur-sm z-[10] opacity-50 rotate-[15deg]"
+  
+><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-earth-icon lucide-earth w-[5rem] h-[5rem] md:w-[10rem] md:h-[10rem]"><path d="M21.54 15H17a2 2 0 0 0-2 2v4.54"/><path d="M7 3.34V5a3 3 0 0 0 3 3a2 2 0 0 1 2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2c0-1.1.9-2 2-2h3.17"/><path d="M11 21.95V18a2 2 0 0 0-2-2a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05"/><circle cx="12" cy="12" r="10"/></svg>
+</motion.div>
+
+
+     {/* <motion.div
+  className="absolute right-10 md:top-[20%] top-[21.5%] blur-sm z-[10] opacity-50 rotate-[15deg]"
+  
+>
+
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-headphones-icon lucide-headphones w-[8rem] h-[8rem] md:w-[15rem] md:h-[15rem]"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg>
+
+ 
+</motion.div> */}
+
+
+     <motion.div
+  className="absolute right-10 md:top-[42%] top-[51.5%] blur-sm z-[10] opacity-50 rotate-[15deg]"
+  
+>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-shirt-icon lucide-shirt w-[5rem] h-[5rem] md:w-[10rem] md:h-[10rem]"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
+ 
+</motion.div>
+
+
+
+     <motion.div
+  className="absolute right-10 md:top-[20%] top-[21.5%] blur-sm z-[10] opacity-50 rotate-[15deg]"
+  
+>
+
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-headphones-icon lucide-headphones w-[5rem] h-[5rem] md:w-[15rem] md:h-[15rem]"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg>
+
+
+ 
+</motion.div>
+
+     <motion.div
+  className="absolute left-10 md:top-[60%] top-[64%] blur-sm z-[10] opacity-50 -rotate-[15deg]"
+  
+><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-youtube-icon lucide-youtube w-[5rem] h-[5rem] md:w-[10rem] md:h-[10rem]"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+ 
+</motion.div>
+
+     <motion.div
+  className="absolute right-20 md:top-[80%] top-[84%] blur-sm z-[10] opacity-50"
+  
+><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-send-icon lucide-send w-[5rem] h-[5rem] md:w-[10rem] md:h-[10rem]"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
+</motion.div>
       <News />
       <Tour />
       <Merchandise />
