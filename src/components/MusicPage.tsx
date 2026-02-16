@@ -164,13 +164,23 @@ export default function MusicPage() {
             </button>
           ))}
         </div>
-      </div> */}
+      </div> */} 
 
       <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
         <div className="max-w-5xl mx-auto">
           {/* Header Section */}
+           <div>
+              <span className="text-2xl font-bold tracking-tighter distorted-text">
+                <img
+                  className="md:w-18 w-13 md:h-6 h-5 inline-block"
+                  src="https://store.djomusic.com/cdn/shop/files/CruxDeluxe_LOGO_410x.png?v=1757606871"
+                  alt=""
+                />
+              </span>
+            </div>
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             {/* Album Cover */}
+           
             <div className="relative">
               <div className="w-full md:w-[400px] md:h-[380px] flex justify-center items-center">
                 <SpotifyEmbed song={slug} />
