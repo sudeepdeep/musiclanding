@@ -118,6 +118,19 @@ function Home() {
         </svg>
       </motion.div>
       {/* <BannerOne /> */}
+      <div className="bg-transparent w-full h-[20px] md:ml-0 ml-5 md:text-center absolute z-[100] top-20">
+        <p className="text-[10px] text-white/50">
+          This is a fan-made website. The official website is -{" "}
+          <a
+            href="https://www.djomusic.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[10px] text-blue-400 cursor-pointer absolute z-50"
+          >
+            djomusic.com
+          </a>
+        </p>
+      </div>
       <BannerThree />
       {/* add background blur */}
       {showBanner && (
