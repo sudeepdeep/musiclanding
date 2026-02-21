@@ -102,13 +102,28 @@ function Home() {
   return (
     <div className="home-wrapper">
       <NoiseOverlay />
+
+      <motion.div className="absolute hidden md:block right-0 top-[5%] md:blur-md blur-sm z-[20] opacity-50">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="lucide lucide-audio-waveform-icon lucide-audio-waveform w-[10rem] h-[10rem] md:w-[40rem] md:h-[40rem]"
+        >
+          <path d="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2" />
+        </svg>
+      </motion.div>
       {/* <BannerOne /> */}
       <BannerThree />
       {/* add background blur */}
       {showBanner && (
         <>
-          <div className="absolute z-10 top-0 w-[100vw] h-[100vw] bg-black/55"></div>
-          <div className="fixed md:h-[70vh] md:w-[50vw] w-[90%] mx-auto mt-[5%] md:top-4 top-16 left-4 right-4 bg-black border border-white/50 text-white p-4 text-center z-50 liquid-glass2">
+          <div className="absolute z-10 top-0 w-[100vw] h-[100vh] bg-black/55"></div>
+          <div className="fixed h-auto md:w-[50vw] w-[90%] mx-auto mt-[5%] pb-[5%] md:top-4 top-16 left-4 right-4 bg-black border border-white/50 text-white p-4 text-center z-50 liquid-glass2">
             <XIcon
               className="absolute top-4 right-4 cursor-pointer"
               onClick={() => setShowBanner(false)}
@@ -130,7 +145,7 @@ function Home() {
                       required
                       disabled={isLoading}
                       autoComplete="email"
-                      className="w-full px-6 py-4 bg-white/10 border border-white/20 text-white placeholder-gray-400 text-lg focus:outline-none focus:border-white/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full px-6 py-4 bg-white/10 border border-white/20 text-white placeholder-white text-lg focus:outline-none focus:border-white/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     />
                   </div>
 
@@ -173,7 +188,7 @@ function Home() {
         </>
       )}
 
-           <motion.div
+      {/* <motion.div
   className="absolute left-0 md:top-[18%] top-[10%] blur-sm z-[10] opacity-50 rotate-[-15deg]"
   
 >
@@ -186,10 +201,9 @@ function Home() {
   className="absolute right-10 md:top-[32%] top-[24.9%] blur-sm z-[10] opacity-50 rotate-[15deg]"
   
 ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-earth-icon lucide-earth w-[5rem] h-[5rem] md:w-[10rem] md:h-[10rem]"><path d="M21.54 15H17a2 2 0 0 0-2 2v4.54"/><path d="M7 3.34V5a3 3 0 0 0 3 3a2 2 0 0 1 2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2c0-1.1.9-2 2-2h3.17"/><path d="M11 21.95V18a2 2 0 0 0-2-2a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05"/><circle cx="12" cy="12" r="10"/></svg>
-</motion.div>
+</motion.div> */}
 
-
-     {/* <motion.div
+      {/* <motion.div
   className="absolute right-10 md:top-[20%] top-[21.5%] blur-sm z-[10] opacity-50 rotate-[15deg]"
   
 >
@@ -199,8 +213,7 @@ function Home() {
  
 </motion.div> */}
 
-
-     <motion.div
+      {/* <motion.div
   className="absolute right-10 md:top-[42%] top-[51.5%] blur-sm z-[10] opacity-50 rotate-[15deg]"
   
 >
@@ -232,7 +245,7 @@ function Home() {
   className="absolute right-20 md:top-[80%] top-[84%] blur-sm z-[10] opacity-50"
   
 ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-send-icon lucide-send w-[5rem] h-[5rem] md:w-[10rem] md:h-[10rem]"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
-</motion.div>
+</motion.div> */}
       <News />
       <Tour />
       <Merchandise />

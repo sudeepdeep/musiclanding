@@ -63,32 +63,32 @@ function Navbar() {
             <div className="hidden md:flex items-center space-x-10 text-sm font-medium tracking-widest uppercase">
               <a
                 className="hover:text-primary transition-colors duration-300"
-                href="#"
+                href="#news"
               >
                 News
               </a>
 
               <a
                 className="hover:text-primary transition-colors duration-300"
-                href="#"
+                href="#tour"
               >
                 Tour
               </a>
               <a
                 className="hover:text-primary transition-colors duration-300"
-                href="#"
+                href="#store"
               >
                 Store
               </a>
               <a
                 className="hover:text-primary transition-colors duration-300"
-                href="#"
+                href="#music"
               >
                 Music
               </a>
               <a
                 className="hover:text-primary transition-colors duration-300"
-                href="#"
+                href="#mail"
               >
                 Mailing
               </a>

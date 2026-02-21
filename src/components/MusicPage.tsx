@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Music, ExternalLink, Copy, Check } from "lucide-react";
+import { Music, ExternalLink, Copy, Check, HomeIcon } from "lucide-react";
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -143,7 +143,12 @@ export default function MusicPage() {
           ease: "easeInOut",
         }}
       />
-
+      <div
+        className="absolute z-50 top-2 right-5 cursor-pointer"
+        onClick={() => (window.location.href = "/")}
+      >
+        <HomeIcon />
+      </div>
       {/* Demo Slug Selector */}
       {/* <div className="border-b border-white/10 backdrop-blur-sm relative z-10">
         <div className="max-w-6xl mx-auto px-4 py-4 flex gap-4 items-center justify-center flex-wrap">
@@ -164,23 +169,26 @@ export default function MusicPage() {
             </button>
           ))}
         </div>
-      </div> */} 
+      </div> */}
 
       <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
         <div className="max-w-5xl mx-auto">
           {/* Header Section */}
-           <div onClick={() => window.location.href="/"} className="cursor-pointer">
-              <span className="text-2xl font-bold tracking-tighter distorted-text">
-                <img
-                  className="md:w-18 w-13 md:h-6 h-5 inline-block"
-                  src="https://store.djomusic.com/cdn/shop/files/CruxDeluxe_LOGO_410x.png?v=1757606871"
-                  alt=""
-                />
-              </span>
-            </div>
+          <div
+            onClick={() => (window.location.href = "/")}
+            className="cursor-pointer"
+          >
+            <span className="text-2xl font-bold tracking-tighter distorted-text">
+              <img
+                className="md:w-18 w-13 md:h-6 h-5 inline-block"
+                src="https://store.djomusic.com/cdn/shop/files/CruxDeluxe_LOGO_410x.png?v=1757606871"
+                alt=""
+              />
+            </span>
+          </div>
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             {/* Album Cover */}
-           
+
             <div className="relative">
               <div className="w-full md:w-[400px] md:h-[380px] flex justify-center items-center">
                 <SpotifyEmbed song={slug} />
@@ -206,16 +214,19 @@ export default function MusicPage() {
                                 }
                               >YOU</span> these styles */}
                   {song.title.split(" ").map((word: string, index: number) => {
-                    const isLastWord = index === song.title.split(" ").length - 1;
-                    
+                    const isLastWord =
+                      index === song.title.split(" ").length - 1;
+
                     return (
                       <span key={index} className="uppercase">
                         {isLastWord ? (
                           <span
                             className="text-transparent"
-                            style={{
-                              WebkitTextStroke: "3px white",
-                            } as React.CSSProperties}
+                            style={
+                              {
+                                WebkitTextStroke: "3px white",
+                              } as React.CSSProperties
+                            }
                           >
                             {word}
                           </span>
@@ -261,20 +272,21 @@ export default function MusicPage() {
           {/* Divider */}
           <div className="border-t border-white/10 my-16"></div>
 
-            {/* Platform Links Section */}
+          {/* Platform Links Section */}
           <div className="space-y-6">
             <div className="text-center md:text-left">
               <h2 className="text-3xl font-bold tracking-tight mb-2">
-                LISTEN <span
-                            className="text-transparent"
-                            style={
-                              {
-                                WebkitTextStroke: "3px white",
-                              } as React.CSSProperties
-                            }
-                          >
-                            NOW
-                          </span>
+                LISTEN{" "}
+                <span
+                  className="text-transparent"
+                  style={
+                    {
+                      WebkitTextStroke: "3px white",
+                    } as React.CSSProperties
+                  }
+                >
+                  NOW
+                </span>
               </h2>
               <p className="text-white/50 text-sm tracking-widest uppercase">
                 Available on {Object.keys(song.platforms).length} Platforms
@@ -322,8 +334,6 @@ export default function MusicPage() {
               Share this link to spread the music
             </p>
           </div>
-
-
         </div>
       </div>
       <Footer />

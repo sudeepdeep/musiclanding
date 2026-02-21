@@ -20,6 +20,10 @@ function BannerThree() {
 
   return (
     <header className="relative h-screen flex items-center justify-center pt-20 overflow-hidden bg-charcoal">
+      <div
+        className={`absolute bottom-0 w-[100vw] h-[100px] z-[10] bg-gradient-to-b from-transparent to-black`}
+      ></div>
+
       <div className="absolute z-50 w-full top-0">
         <Navbar />
       </div>
@@ -31,26 +35,15 @@ function BannerThree() {
         />
       </div>
 
-      
-     <motion.div
-  className="absolute right-0 top-[28%] md:blur-md blur-sm z-[10] opacity-50"
-  
->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-audio-waveform-icon lucide-audio-waveform w-[10rem] h-[10rem] md:w-[40rem] md:h-[40rem]">
-    <path d="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2"/>
-  </svg>
-</motion.div>
-
-
-     <motion.div
+      {/* <motion.div
   className="absolute left-0 top-[48%] md:blur-md blur-sm z-[10] opacity-50 rotate-[15deg]"
   
 >
 
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-music-icon lucide-music w-[5rem] h-[5rem] md:w-[15rem] md:h-[15rem]"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
 
-</motion.div>
-      <div className="relative z-10 text-center px-6">
+</motion.div> */}
+      <div className="relative z-40 text-center px-6">
         <h1 className="text-8xl md:text-[10rem] font-extrabold tracking-tighter mb-4 leading-none uppercase">
           BACK ON{" "}
           <span
@@ -70,15 +63,16 @@ function BannerThree() {
         </p>
 
         <div className="mt-12 flex flex-col md:flex-row gap-6 justify-center">
-          
-           <a className="px-10 py-4 bg-primary text-white font-bold hover:bg-primary/80"
+          <a
+            className="px-10 py-4 bg-primary text-white font-bold hover:bg-primary/80"
             href="#releases"
             onClick={handleClickonCD}
           >
             LATEST ALBUM
           </a>
-          
-           <a className="px-10 py-4 border border-white/30 glass font-bold hover:bg-white/10 transition-colors"
+
+          <a
+            className="px-10 py-4 border border-white/30 glass font-bold hover:bg-white/10 transition-colors"
             href="#tour"
           >
             VIEW TOUR DATES
