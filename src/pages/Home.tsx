@@ -251,6 +251,7 @@ function Home() {
       <Merchandise />
       <YouTubeSection />
       <MailingList />
+
       <Footer />
       <SpotifyFixedPlayer />
     </div>

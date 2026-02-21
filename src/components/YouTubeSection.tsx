@@ -14,48 +14,81 @@ import {
   YoutubeIcon,
 } from "../assets/Icons";
 import JoeGif from "../assets/joekerry.gif";
+import brit from "../assets/Brit_Awards.png";
+import grammy from "../assets/grammy.svg";
+import ama from "../assets/AMA.png";
 
 function Gallery({ items, setIndex }: any) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
-      {items.map((item: any, i: any) => (
+    <div className="mb-12 space-y-3">
+      {/* First Row - Single Video */}
+      {items[0] && (
         <motion.div
-          className="relative h-[160px] rounded-lg overflow-hidden cursor-pointer group"
-          key={item.id}
-          onClick={() => setIndex(i)}
-          whileHover={{ scale: 1.05 }}
+          className="relative md:h-[460px] h-[160px] rounded-lg overflow-hidden cursor-pointer group"
+          onClick={() => setIndex(0)}
+          whileHover={{ scale: 1.03 }}
           transition={{ duration: 0.3 }}
         >
           <img
-            src={item.thumbnail}
-            alt={item.title}
+            src={items[0].thumbnail}
+            alt={items[0].title}
             className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-75"
           />
-          {/* Play Icon Overlay */}
+
+          {/* Play Icon */}
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <motion.div
-              initial={{ scale: 0 }}
-              whileHover={{ scale: 1 }}
-              transition={{ duration: 0.3 }}
-              className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center shadow-xl"
+            <svg
+              className="w-14 h-14 text-white"
+              fill="currentColor"
+              viewBox="0 0 24 24"
             >
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+
+          {/* Title */}
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3">
+            <p className="text-white text-sm font-semibold">{items[0].title}</p>
+          </div>
+        </motion.div>
+      )}
+
+      {/* Second Row - 3 Videos */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        {items.slice(1, 4).map((item: any, i: number) => (
+          <motion.div
+            key={item.id}
+            className="relative md:h-[200px] h-[160px] rounded-lg overflow-hidden cursor-pointer group"
+            onClick={() => setIndex(i + 1)}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          >
+            <img
+              src={item.thumbnail}
+              alt={item.title}
+              className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-75"
+            />
+
+            {/* Play Icon */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <svg
-                className="w-6 h-6 text-white ml-1"
+                className="w-10 h-10 text-white"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
                 <path d="M8 5v14l11-7z" />
               </svg>
-            </motion.div>
-          </div>
-          {/* Title Overlay */}
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <p className="text-white text-xs font-semibold line-clamp-2">
-              {item.title}
-            </p>
-          </div>
-        </motion.div>
-      ))}
+            </div>
+
+            {/* Title */}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-2">
+              <p className="text-white text-xs font-semibold line-clamp-2">
+                {item.title}
+              </p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -111,18 +144,18 @@ function YouTubeSection() {
   // Actual DJO video IDs and titles
   const videos = [
     {
-      id: "ro8-I3DoU5w",
-      title: "Djo - Another Bite Tour (Part Four)",
-      description: "Official Music Video",
-      thumbnail:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC4cw5SRPG5We_z_I7bhxW56Jbyf693yhjgQ&s",
-    },
-    {
       id: "zxkVkm3VHxk",
       title: "Djo - Mr. Mountebank",
       description: "Official Music Video",
       thumbnail:
         "https://i.ytimg.com/vi/zxkVkm3VHxk/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBOdnhBvrzePV44gTkL71nr2r5ydw",
+    },
+    {
+      id: "ro8-I3DoU5w",
+      title: "Djo - Another Bite Tour (Part Four)",
+      description: "Official Music Video",
+      thumbnail:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC4cw5SRPG5We_z_I7bhxW56Jbyf693yhjgQ&s",
     },
     {
       id: "ZqEOGg6WxgI",
@@ -204,7 +237,13 @@ function YouTubeSection() {
           </AnimatePresence>
 
           <div className="text-center mt-12">
-            <button className="mx-auto px-12 py-4 border-2 border-white text-white font-bold hover:bg-white hover:text-black transition-all duration-300 flex gap-2 items-center">
+            <button
+              onClick={() =>
+                (window.location.href =
+                  "https://www.youtube.com/channel/UChwJDTqACGvdzI7-BI_BX5w")
+              }
+              className="mx-auto px-12 py-4 border-2 border-white text-white font-bold hover:bg-white hover:text-black transition-all duration-300 flex gap-2 items-center"
+            >
               View on <span className="hidden md:block">YouTube</span>{" "}
               <YoutubeIcon />
             </button>
@@ -314,8 +353,8 @@ function YouTubeSection() {
           alt="JoeGif"
         />
 
-        <div className="absolute inset-0 flex md:flex-row flex-col gap-5 items-center justify-center z-10 ">
-          <p className="text-2xl md:text-4xl font-black text-white mr-5">
+        <div className="absolute inset-0 flex flex-col gap-5 items-center justify-center z-10 ">
+          <p className="text-[15px] font-black text-white/50 mr-5">
             FOLLOW ON{" "}
           </p>
           <div className="flex gap-5">
@@ -324,21 +363,21 @@ function YouTubeSection() {
               target="_blank"
               rel="noreferrer"
             >
-              <YoutubeIcon h={8} w={8} />
+              <YoutubeIcon h={6} w={6} />
             </a>
             <a
               href="https://open.spotify.com/artist/5p9HO3XC5P3BLxJs5Mtrhm"
               target="_blank"
               rel="noreferrer"
             >
-              <SpotifyIcon h={8} w={8} />
+              <SpotifyIcon h={6} w={6} />
             </a>
             <a
               href="https://music.apple.com/us/artist/djo/1473178582"
               target="_blank"
               rel="noreferrer"
             >
-              <AppleMusicIcon h={8} w={8} />
+              <AppleMusicIcon h={6} w={6} />
             </a>
             <a
               href="https://soundcloud.com/djokyri"
@@ -346,17 +385,38 @@ function YouTubeSection() {
               rel="noreferrer"
               className="mt-[-5px]"
             >
-              <SoundCloudIcon h={10} w={10} />
+              <SoundCloudIcon h={8} w={8} />
             </a>
             <a
               href="https://music.amazon.com/artists/B005I4FX1Y/djo"
               target="_blank"
               rel="noreferrer"
             >
-              <AmazonMusicIcon h={8} w={8} />
+              <AmazonMusicIcon h={6} w={6} />
             </a>
+          </div>
         </div>
-        </div>
+      </div>
+
+      <div className="bg-white flex items-center gap-[25px] justify-center h-[140px]">
+        <img
+          src={brit}
+          alt="brit"
+          width={120}
+          title="Best International Song - 2025"
+        />
+        <img
+          src={ama}
+          alt="American music awards"
+          width={80}
+          title="Social Song of the Year - 2025"
+        />
+        <img
+          src={grammy}
+          alt="grammy"
+          width={120}
+          title="Best Album Cover - 2026"
+        />
       </div>
     </>
   );

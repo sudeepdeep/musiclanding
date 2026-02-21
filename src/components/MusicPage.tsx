@@ -143,6 +143,7 @@ export default function MusicPage() {
           ease: "easeInOut",
         }}
       />
+
       <div
         className="absolute z-50 top-2 right-5 cursor-pointer"
         onClick={() => (window.location.href = "/")}
